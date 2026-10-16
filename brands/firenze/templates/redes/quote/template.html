@@ -1,0 +1,38 @@
+<style>
+  .pieza{--a:var(--ajuste,1);--fondo:var(--oxford-blue);--texto:var(--white);--acento:var(--light-sea-green);--firma:var(--tea-green);--suave:#b9c2d6;--banda:var(--castleton-green);
+    position:relative;width:1080px;height:1080px;overflow:hidden;display:flex;flex-direction:column;padding:64px 64px 64px 96px;background:var(--fondo);color:var(--texto)}
+  .fondo-verde{--fondo:var(--castleton-green);--acento:var(--tea-green);--firma:var(--tea-green);--suave:var(--tea-green);--banda:var(--oxford-blue)}
+  .fondo-tea{--fondo:var(--tea-green);--texto:var(--oxford-blue);--acento:var(--castleton-green);--firma:var(--castleton-green);--suave:var(--ink-muted);--banda:var(--castleton-green)}
+  .fondo-blanco{--fondo:var(--white);--texto:var(--oxford-blue);--acento:var(--light-sea-green);--firma:var(--castleton-green);--suave:var(--ink-muted);--banda:var(--castleton-green)}
+
+  .banda{position:absolute;left:0;top:0;bottom:0;width:32px;background:var(--banda)}
+  .etiqueta{font-family:var(--font-display);font-weight:700;font-size:24px;line-height:28px;letter-spacing:.16em;text-transform:uppercase;color:var(--acento);max-width:700px}
+  .fondo-blanco .etiqueta{color:var(--castleton-green)}
+
+  .cuerpo{margin-top:auto;display:flex;flex-direction:column;gap:calc(36px * var(--a))}
+  .comilla{font-family:var(--font-body);font-weight:700;font-size:calc(240px * var(--a));line-height:.6;height:calc(120px * var(--a));color:var(--acento)}
+  .cita{margin:0;font-family:var(--font-display);font-weight:500;font-size:calc(64px * var(--a));line-height:1.14;text-wrap:balance;max-width:900px;white-space:pre-line}
+  .cita.largo{font-size:calc(52px * var(--a))}
+  .firma{display:flex;flex-direction:column;gap:6px;padding-top:28px;border-top:2px solid color-mix(in srgb,var(--acento) 45%,transparent);max-width:900px}
+  .firma b{font-family:var(--font-display);font-weight:700;font-size:30px;color:var(--firma)}
+  .firma span{font-family:var(--font-body);font-size:24px;line-height:30px;color:var(--suave)}
+
+  .pie{display:flex;align-items:flex-end;justify-content:space-between;margin-top:calc(64px * var(--a))}
+  .nombre{width:240px}
+  .nombre svg{display:block;width:100%;height:auto}
+  .red{font-family:var(--font-display);font-weight:700;font-size:24px;letter-spacing:.06em;color:var(--firma)}
+</style>
+
+<div class="pieza fondo-{{fondo}}" data-ajustar>
+  <div class="banda" aria-hidden="true"></div>
+  {{#etiqueta}}<div class="etiqueta">{{etiqueta}}</div>{{/etiqueta}}
+  <div class="cuerpo">
+    <div class="comilla" aria-hidden="true">“</div>
+    <blockquote class="cita{{#cita_largo}} largo{{/cita_largo}}">{{cita}}</blockquote>
+    {{#autor}}<div class="firma"><b>{{autor}}</b>{{#cargo}}<span>{{cargo}}</span>{{/cargo}}</div>{{/autor}}
+  </div>
+  <div class="pie">
+    <div class="nombre">{{#fondo_oxford}}{{{logo.nombre.tea}}}{{/fondo_oxford}}{{#fondo_verde}}{{{logo.nombre.blanco}}}{{/fondo_verde}}{{#fondo_tea}}{{{logo.nombre.oxford}}}{{/fondo_tea}}{{#fondo_blanco}}{{{logo.nombre.verde}}}{{/fondo_blanco}}</div>
+    <div class="red">{{contacto.instagram}}</div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<style>
+  /* Hoja membreteada del manual (pág. 12) en tamaño Carta: 816×1056 px = 8.5×11 in.
+     Cada página repite membrete, cuñas de las esquinas, marca de agua y pie. */
+  .pagina{--papel:#eef0ec;position:relative;width:816px;height:1056px;overflow:hidden;break-after:page;background:var(--papel);color:var(--oxford-blue);font-family:var(--font-body)}
+  .pagina:last-child{break-after:auto}
+  .papel-blanco .pagina,.pagina.papel-blanco{--papel:var(--white)}
+
+  .esquinas{position:absolute;inset:0;width:816px;height:1056px}
+  .c-oxford{fill:var(--oxford-blue)}.c-lapis{fill:var(--lapis-lazuli)}.c-sea{fill:var(--light-sea-green)}
+
+  /* Sello como marca de agua, cortado por el borde derecho como en el manual */
+  .marca-agua{position:absolute;left:300px;top:470px;width:600px;height:600px;opacity:.07}
+  .marca-agua svg{width:100%;height:100%;display:block}
+
+  .membrete{position:absolute;left:62px;top:52px;width:262px}
+  .membrete svg{display:block;width:100%;height:auto}
+
+  /* Zona de texto: lo que no cabe pasa a la página siguiente */
+  .flujo{position:absolute;left:88px;right:88px;top:232px;bottom:150px;overflow:hidden;font-size:13.5px;line-height:1.62}
+  .continuacion .flujo{top:214px}
+  .flujo p{margin:0 0 14px;text-wrap:pretty}
+  .flujo .fecha{margin-bottom:28px}
+  .flujo .destinatario{white-space:pre-line;margin-bottom:28px}
+  .flujo .asunto{text-align:left;margin-bottom:24px}
+  .flujo .asunto b{font-family:var(--font-display);font-weight:700}
+  .flujo .saludo{margin-bottom:16px}
+  .flujo .despedida{margin-top:28px;text-align:left}
+  .firma{margin-top:56px;display:flex;flex-direction:column;gap:2px}
+  .firma i{display:block;width:220px;height:1px;background:var(--oxford-blue);margin-bottom:8px}
+  .firma b{font-family:var(--font-display);font-weight:700;font-size:14px}
+  .firma span{font-size:12.5px;color:var(--ink-muted)}
+
+  .pie{position:absolute;left:0;right:0;bottom:0;height:120px}
+  .lema{position:absolute;left:96px;bottom:40px;width:250px;font-family:var(--font-display);font-weight:500;font-size:13px;line-height:1.35;text-align:right}
+  .contactos{position:absolute;left:520px;bottom:30px;display:flex;flex-direction:column;gap:7px;font-size:11.5px}
+  .contactos span{display:flex;align-items:center;gap:10px}
+  .contactos svg{width:15px;height:15px;flex:none}
+  .num-pagina{position:absolute;right:88px;top:178px;font-size:10.5px;letter-spacing:.06em;color:var(--ink-muted)}
+  .num-pagina:empty{display:none}
+</style>
+
+<div class="pagina papel-{{papel}}" data-paginar>
+  <svg class="esquinas" viewBox="0 0 816 1056" aria-hidden="true">
+    <polygon class="c-sea" points="596,0 816,0 816,170"/>
+    <polygon class="c-lapis" points="636,0 816,0 816,104"/>
+    <polygon class="c-oxford" points="440,0 816,0 816,40"/>
+    <polygon class="c-sea" points="0,918 0,1056 236,1056"/>
+    <polygon class="c-lapis" points="0,968 0,1056 286,1056"/>
+    <polygon class="c-oxford" points="0,1016 0,1056 352,1056"/>
+  </svg>
+  <div class="marca-agua" aria-hidden="true">{{{logo.isotipo.verde}}}</div>
+  <div class="membrete" role="img" aria-label="FIRENZE S.A.S. — NIT 901.907.766-5">{{{logo.membrete.color}}}</div>
+  <div class="num-pagina"></div>
+
+  <div class="flujo">
+    {{#fecha}}<p class="fecha">{{fecha}}</p>{{/fecha}}
+    {{#destinatario}}<p class="destinatario">{{destinatario}}</p>{{/destinatario}}
+    {{#asunto}}<p class="asunto"><b>Asunto:</b> {{asunto}}</p>{{/asunto}}
+    {{#saludo}}<p class="saludo">{{saludo}}</p>{{/saludo}}
+    {{#cuerpo_parrafos}}<p>{{.}}</p>{{/cuerpo_parrafos}}
+    {{#despedida}}<p class="despedida">{{despedida}}</p>{{/despedida}}
+    {{#firma_nombre}}<div class="firma"><i></i><b>{{firma_nombre}}</b>{{#firma_cargo}}<span>{{firma_cargo}}</span>{{/firma_cargo}}<span>{{marca.nombre}}</span></div>{{/firma_nombre}}
+  </div>
+
+  <div class="pie">
+    <div class="lema">“Proyectos que inspiran,<br>sueños que perduran”</div>
+    <div class="contactos">
+      <span>{{{icono.mail.oxford}}}{{contacto.correo}}</span>
+      <span>{{{icono.phone.oxford}}}{{contacto.telefono}}</span>
+      <span>{{{icono.instagram.oxford}}}{{contacto.instagram}}</span>
+    </div>
+  </div>
+</div>

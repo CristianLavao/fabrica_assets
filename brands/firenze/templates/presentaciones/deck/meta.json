@@ -1,0 +1,7 @@
+{
+  "nombre": "Deck corto FIRENZE",
+  "version": 1,
+  "estado": "enlazado",
+  "claudeDesign": "https://claude.ai/artifact/M8RDaEHZ7j4xHYbsxJ6Siz",
+  "artboard": ["Portada.dc.html", "DeckContenido.dc.html", "DeckFoto.dc.html", "DeckCifra.dc.html", "DeckCierre.dc.html"]
+}

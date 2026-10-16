@@ -1,0 +1,156 @@
+{
+  "campos": [
+    {
+      "id": "fondo",
+      "tipo": "opciones",
+      "label": "Fondo",
+      "opciones": [
+        {
+          "valor": "verde",
+          "label": "Verde"
+        },
+        {
+          "valor": "oxford",
+          "label": "Oxford"
+        },
+        {
+          "valor": "blanco",
+          "label": "Blanco"
+        },
+        {
+          "valor": "foto",
+          "label": "Foto con velo"
+        }
+      ],
+      "ejemplo": "foto"
+    },
+    {
+      "id": "etiqueta",
+      "tipo": "texto",
+      "label": "Etiqueta",
+      "max": 28,
+      "ayuda": "2 o 3 palabras. Va en mayúsculas.",
+      "ejemplo": "Proyecto entregado"
+    },
+    {
+      "id": "titulo",
+      "tipo": "texto",
+      "label": "Título",
+      "max": 70,
+      "largo": 40,
+      "requerido": true,
+      "ejemplo": "Torre Altavista: ingeniería que perdura"
+    },
+    {
+      "id": "texto",
+      "tipo": "parrafo",
+      "label": "Texto",
+      "max": 160,
+      "ayuda": "Una o dos frases.",
+      "ejemplo": "Gestionamos el proyecto de principio a fin con diseño sostenible y entrega a tiempo."
+    },
+    {
+      "id": "datos",
+      "tipo": "lista",
+      "label": "Datos clave",
+      "item": "cifra",
+      "max": 3,
+      "compacto": true,
+      "ayuda": "Hasta 3 cifras con su etiqueta.",
+      "subcampos": [
+        {
+          "id": "valor",
+          "label": "Cifra",
+          "placeholder": "12.400"
+        },
+        {
+          "id": "etiqueta",
+          "label": "Qué mide",
+          "placeholder": "m² construidos"
+        }
+      ],
+      "ejemplo": [
+        {
+          "valor": "12.400",
+          "etiqueta": "m² construidos"
+        },
+        {
+          "valor": "18",
+          "etiqueta": "meses de obra"
+        },
+        {
+          "valor": "100%",
+          "etiqueta": "a tiempo"
+        }
+      ]
+    },
+    {
+      "id": "puntos",
+      "tipo": "lista",
+      "label": "Puntos (opcional)",
+      "item": "punto",
+      "max": 3,
+      "ayuda": "Hasta 3 en un post, para que se lea en el celular. Para más puntos usa el one-pager o el deck.",
+      "subcampos": [
+        {
+          "id": "titulo",
+          "label": "Título",
+          "max": 28
+        },
+        {
+          "id": "texto",
+          "label": "Texto",
+          "tipo": "parrafo",
+          "max": 70
+        }
+      ],
+      "ejemplo": []
+    },
+    {
+      "id": "presentacion",
+      "tipo": "opciones",
+      "label": "Mostrar los puntos como",
+      "visibleSi": "puntos",
+      "opciones": [
+        {
+          "valor": "tarjetas",
+          "label": "Tarjetas"
+        },
+        {
+          "valor": "lista",
+          "label": "Lista"
+        }
+      ],
+      "ejemplo": "tarjetas"
+    },
+    {
+      "id": "imagen",
+      "tipo": "imagen",
+      "label": "Imagen",
+      "ayuda": "Opcional. Se usa con el fondo «Foto con velo».",
+      "ejemplo": "ds/project/assets/Fotografia/rascacielos-contrapicado.jpg"
+    },
+    {
+      "id": "tratamiento",
+      "tipo": "opciones",
+      "label": "Color de la foto",
+      "visibleSi": "imagen",
+      "ayuda": "Duotono con los colores de marca: unifica fotos de distintas fuentes.",
+      "opciones": [
+        {
+          "valor": "verde",
+          "label": "Verde"
+        },
+        {
+          "valor": "azul",
+          "label": "Azul"
+        },
+        {
+          "valor": "original",
+          "label": "Original"
+        }
+      ],
+      "ejemplo": "verde"
+    }
+  ]
+}

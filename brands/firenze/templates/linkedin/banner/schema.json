@@ -1,0 +1,15 @@
+{
+  "campos": [
+    { "id": "fondo", "tipo": "opciones", "label": "Fondo", "opciones": [
+      { "valor": "verde", "label": "Verde" },
+      { "valor": "oxford", "label": "Oxford" }
+    ], "ejemplo": "verde" },
+    { "id": "titulo", "tipo": "texto", "label": "Título", "max": 60, "largo": 42, "requerido": true, "ejemplo": "Gestión integral de proyectos de ingeniería" },
+    { "id": "texto", "tipo": "texto", "label": "Línea de apoyo", "max": 80, "ejemplo": "Diseño · Construcción · Interventoría — www.firenze.com" },
+    { "id": "imagen", "tipo": "imagen", "label": "Imagen", "ayuda": "Va a la izquierda, donde LinkedIn pone el logo de la página encima.", "ejemplo": "ds/project/assets/Fotografia/rascacielos-contrapicado.jpg" },
+    { "id": "tratamiento", "tipo": "opciones", "label": "Color de la foto", "visibleSi": "imagen",
+      "ayuda": "Duotono con los colores de marca: unifica fotos de distintas fuentes.",
+      "opciones": [ { "valor": "verde", "label": "Verde" }, { "valor": "azul", "label": "Azul" }, { "valor": "original", "label": "Original" } ],
+      "ejemplo": "verde" }
+  ]
+}

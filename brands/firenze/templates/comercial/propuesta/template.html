@@ -1,0 +1,90 @@
+<style>
+  /* Propuesta comercial en Carta (816×1056 px). Portada fija + páginas interiores que se
+     generan solas según el contenido; los títulos de sección nunca quedan solos al pie. */
+  body{counter-reset:seccion}
+  .pagina{position:relative;width:816px;height:1056px;overflow:hidden;break-after:page;background:var(--white);color:var(--oxford-blue);font-family:var(--font-body)}
+  .pagina:last-child{break-after:auto}
+
+  /* Portada */
+  .portada{display:flex;flex-direction:column;background:var(--castleton-green);color:var(--white)}
+  .portada .foto{position:relative;height:440px;flex:none;background:var(--oxford-blue)}
+  .portada .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .portada .filo{height:8px;flex:none;background:var(--light-sea-green)}
+  .portada .cuerpo{flex:1;padding:48px 72px 56px;display:flex;flex-direction:column;gap:18px}
+  .portada .nombre{width:170px}.portada .nombre svg{display:block;width:100%;height:auto}
+  .portada .etiqueta{margin-top:20px;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--tea-green)}
+  .portada h1{margin:0;font-family:var(--font-display);font-weight:500;font-size:40px;line-height:1.1;text-wrap:balance;max-width:640px}
+  .portada h1.largo{font-size:34px}
+  .portada .datos{margin-top:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 40px;padding-top:24px;border-top:1px solid color-mix(in srgb,var(--tea-green) 40%,transparent);font-size:14px}
+  .portada .datos div{display:flex;flex-direction:column;gap:3px}
+  .portada .datos span{font-family:var(--font-display);font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tea-green)}
+
+  /* Interiores */
+  .cab{position:absolute;left:72px;right:72px;top:44px;display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:12px;border-bottom:2px solid var(--castleton-green)}
+  .cab .mini{width:96px}.cab .mini svg{display:block;width:100%;height:auto}
+  .cab span{font-size:10.5px;letter-spacing:.06em;color:var(--ink-muted)}
+  .pie-int{position:absolute;left:72px;right:72px;bottom:36px;display:flex;justify-content:space-between;padding-top:10px;border-top:1px solid var(--line);font-size:10px;color:var(--ink-muted)}
+  .flujo{position:absolute;left:72px;right:72px;top:112px;bottom:84px;overflow:hidden;font-size:13px;line-height:1.6}
+  .flujo p{margin:0 0 12px;text-wrap:pretty}
+
+  .sec{display:flex;align-items:baseline;gap:12px;margin:14px 0 14px;padding-top:6px;font-family:var(--font-display);font-weight:500;font-size:22px;color:var(--castleton-green);counter-increment:seccion}
+  .sec::before{content:counter(seccion, decimal-leading-zero);font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--light-sea-green)}
+  .sec:first-child{margin-top:0}
+
+  .actividad{display:grid;grid-template-columns:28px minmax(0,1fr);gap:2px 10px;padding:10px 0;border-bottom:1px solid var(--line)}
+  .actividad .n{font-family:var(--font-display);font-weight:700;font-size:11px;color:var(--light-sea-green);padding-top:2px}
+  .actividad b{font-family:var(--font-display);font-weight:700;font-size:13.5px}
+  .actividad div div{font-size:12.5px;color:var(--ink-muted)}
+
+  .fila{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.6fr) minmax(0,1.5fr);gap:16px;padding:9px 12px;border-bottom:1px solid var(--line);font-size:12.5px}
+  .fila.cabeza{background:var(--castleton-green);color:var(--white);font-family:var(--font-display);font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;border-bottom:0}
+  .fila.dos{grid-template-columns:minmax(0,1fr) auto}
+  .fila .valor{text-align:right;font-variant-numeric:tabular-nums}
+  .fila.total{background:var(--surface-alt);font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--castleton-green);border-bottom:0}
+  .espacio{height:14px}
+
+  .firma{margin-top:36px;display:flex;flex-direction:column;gap:2px}
+  .firma i{display:block;width:220px;height:1px;background:var(--oxford-blue);margin-bottom:8px}
+  .firma b{font-family:var(--font-display);font-weight:700;font-size:13.5px}
+  .firma span{font-size:12px;color:var(--ink-muted)}
+</style>
+
+<section class="pagina portada">
+  <div class="foto">{{#imagen}}<img class="trat-{{tratamiento}}" src="{{imagen}}" alt="">{{/imagen}}</div>
+  <div class="filo" aria-hidden="true"></div>
+  <div class="cuerpo">
+    <div class="nombre">{{{logo.nombre.blanco}}}</div>
+    <div class="etiqueta">Propuesta comercial</div>
+    <h1 class="{{#titulo_largo}}largo{{/titulo_largo}}">{{titulo}}</h1>
+    <div class="datos">
+      {{#cliente}}<div><span>Preparada para</span>{{cliente}}</div>{{/cliente}}
+      {{#numero}}<div><span>Propuesta n.º</span>{{numero}}</div>{{/numero}}
+      {{#fecha}}<div><span>Fecha</span>{{fecha}}</div>{{/fecha}}
+      {{#vigencia}}<div><span>Vigencia</span>{{vigencia}}</div>{{/vigencia}}
+    </div>
+  </div>
+</section>
+
+<section class="pagina interior" data-paginar>
+  <div class="cab"><span class="mini">{{{logo.nombre.verde}}}</span><span>Propuesta comercial{{#numero}} · {{numero}}{{/numero}}{{#cliente}} · {{cliente}}{{/cliente}}</span></div>
+  <div class="flujo">
+    {{#contexto}}<h2 class="sec con-siguiente">Contexto y objetivo</h2>{{/contexto}}
+    {{#contexto_parrafos}}<p>{{.}}</p>{{/contexto_parrafos}}
+
+    {{#alcance_n}}<h2 class="sec con-siguiente">Alcance</h2>{{/alcance_n}}
+    {{#alcance}}<div class="actividad"><span class="n">{{@nn}}</span><div><b>{{titulo}}</b>{{#texto}}<div>{{texto}}</div>{{/texto}}</div></div>{{/alcance}}
+
+    {{#cronograma_n}}<h2 class="sec con-siguiente">Cronograma</h2><div class="fila cabeza con-siguiente"><span>Fase</span><span>Duración</span><span>Entregable</span></div>{{/cronograma_n}}
+    {{#cronograma}}<div class="fila"><span>{{fase}}</span><span>{{duracion}}</span><span>{{entregable}}</span></div>{{/cronograma}}
+
+    {{#inversion_n}}<h2 class="sec con-siguiente">Inversión</h2><div class="fila cabeza dos con-siguiente"><span>Concepto</span><span>Valor</span></div>{{/inversion_n}}
+    {{#inversion}}<div class="fila dos"><span>{{concepto}}</span><span class="valor">{{valor}}</span></div>{{/inversion}}
+    {{#total}}<div class="fila dos total"><span>Total</span><span class="valor">{{total}}</span></div><div class="espacio"></div>{{/total}}
+
+    {{#condiciones}}<h2 class="sec con-siguiente">Condiciones</h2>{{/condiciones}}
+    {{#condiciones_parrafos}}<p>{{.}}</p>{{/condiciones_parrafos}}
+
+    {{#firma_nombre}}<div class="firma"><i></i><b>{{firma_nombre}}</b>{{#firma_cargo}}<span>{{firma_cargo}}</span>{{/firma_cargo}}<span>{{marca.nombre}} · {{contacto.nit}}</span><span>{{contacto.correo}} · {{contacto.telefono}}</span></div>{{/firma_nombre}}
+  </div>
+  <div class="pie-int"><span>{{marca.nombre}} · {{contacto.web}}</span><span class="num-pagina"></span></div>
+</section>

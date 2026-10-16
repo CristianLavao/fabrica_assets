@@ -1,0 +1,19 @@
+{
+  "archivo": "asunto",
+  "campos": [
+    { "id": "papel", "tipo": "opciones", "label": "Papel", "opciones": [
+      { "valor": "manual", "label": "Gris del manual" },
+      { "valor": "blanco", "label": "Blanco (ahorra tinta)" }
+    ], "ejemplo": "manual" },
+    { "id": "fecha", "tipo": "texto", "label": "Lugar y fecha", "max": 60, "ejemplo": "Bogotá D.C., 15 de octubre de 2026" },
+    { "id": "destinatario", "tipo": "parrafo", "label": "Destinatario", "max": 200, "ayuda": "Una línea por renglón.", "ejemplo": "Señores\n[Empresa]\n[Nombre del contacto]\n[Ciudad]" },
+    { "id": "asunto", "tipo": "texto", "label": "Asunto", "max": 90, "requerido": true, "ejemplo": "Propuesta de interventoría técnica para el proyecto Torre Altavista" },
+    { "id": "saludo", "tipo": "texto", "label": "Saludo", "max": 60, "ejemplo": "Respetados señores:" },
+    { "id": "cuerpo", "tipo": "parrafo", "label": "Cuerpo del documento", "max": 9000, "parrafos": true, "requerido": true,
+      "ayuda": "Separa los párrafos con una línea en blanco. Si el texto no cabe, sigue en otra página con el mismo membrete.",
+      "ejemplo": "Agradecemos la invitación a presentar nuestra propuesta para la interventoría técnica, administrativa y financiera del proyecto Torre Altavista.\n\nNuestro equipo supervisará el cumplimiento de los diseños aprobados, la calidad de los materiales y procesos constructivos, y la ejecución del presupuesto y del cronograma, con informes semanales de avance y alertas tempranas ante cualquier desviación.\n\nEl alcance, el equipo asignado y la propuesta económica se detallan en el documento adjunto. Quedamos atentos a programar una visita técnica al predio para afinar los tiempos de ejecución.\n\nAgradecemos de antemano su atención." },
+    { "id": "despedida", "tipo": "texto", "label": "Despedida", "max": 40, "ejemplo": "Cordialmente," },
+    { "id": "firma_nombre", "tipo": "texto", "label": "Nombre de quien firma", "max": 60, "ejemplo": "[Nombre y apellido]" },
+    { "id": "firma_cargo", "tipo": "texto", "label": "Cargo", "max": 60, "ejemplo": "[Gerente general]" }
+  ]
+}

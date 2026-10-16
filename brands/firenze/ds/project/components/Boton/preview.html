@@ -1,0 +1,19 @@
+<!-- @dsCard group="Contenido" height=100 subtitle="Primario y secundario" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Botón</title>
+<style>
+  body{margin:0;background:var(--surface)}
+  .row{display:flex;gap:16px;padding:24px 32px;flex-wrap:wrap}
+  .btn{font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:16px 24px;border-radius:var(--radius-none);border:2px solid var(--brand-fill);cursor:pointer}
+  .btn:focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px}
+  .p{background:var(--brand-fill);color:var(--on-brand)}
+  .s{background:transparent;color:var(--brand-text);border-color:var(--brand-text)}
+</style></head>
+<body>
+<div class="row">
+  <button class="btn p">Solicitar propuesta</button>
+  <button class="btn s">Ver proyectos</button>
+</div>
+</body>
+</html>

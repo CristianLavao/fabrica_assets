@@ -1,0 +1,48 @@
+<style>
+  /* Zonas seguras de historia: los 250 px de arriba y de abajo los tapa la interfaz de la red */
+  .pieza{--a:var(--ajuste,1);--panel:var(--castleton-green);--acento:var(--tea-green);
+    position:relative;width:1080px;height:1920px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel);color:var(--white)}
+  .fondo-oxford{--panel:var(--oxford-blue);--acento:var(--light-sea-green)}
+
+  .foto{position:relative;height:860px;flex:none;background:var(--oxford-blue)}
+  .fondo-oxford .foto{background:var(--castleton-green)}
+  .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .sello{position:absolute;left:80px;top:200px;width:152px;height:152px;display:flex;align-items:center;justify-content:center;background:var(--panel)}
+  .sello svg{width:108px;height:108px;display:block}
+  .filo{height:14px;flex:none;background:var(--light-sea-green)}
+  .fondo-oxford .filo{background:var(--castleton-green)}
+
+  /* El panel es lo que se ajusta si el contenido no cabe */
+  .panel{--a:var(--ajuste,1);position:relative;flex:1;min-height:0;padding:80px 80px 260px;display:flex;flex-direction:column;gap:calc(32px * var(--a));overflow:hidden}
+  .etiqueta{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:32px;letter-spacing:.16em;text-transform:uppercase;color:var(--acento);max-width:700px}
+  .titulo{margin:0;font-family:var(--font-display);font-weight:500;font-size:calc(88px * var(--a));line-height:1.04;text-wrap:balance;max-width:900px}
+  .titulo.largo{font-size:calc(74px * var(--a))}
+  .texto{margin:0;font-family:var(--font-body);font-size:calc(36px * var(--a));line-height:1.4;max-width:880px;white-space:pre-line}
+  .fondo-oxford .texto{color:var(--tea-green)}
+  .datos{display:flex;gap:56px;padding-top:calc(32px * var(--a));border-top:2px solid color-mix(in srgb,var(--acento) 35%,transparent)}
+  .datos:empty{display:none}
+  .dato{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .dato b{font-family:var(--font-display);font-weight:700;font-size:calc(80px * var(--a));line-height:1;color:var(--acento);font-variant-numeric:tabular-nums}
+  .dato span{font-family:var(--font-body);font-size:calc(28px * var(--a))}
+  .cierre{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .cta{display:inline-flex;align-items:center;padding:26px 40px;background:var(--tea-green);color:var(--oxford-blue);font-family:var(--font-display);font-weight:700;font-size:28px;letter-spacing:.08em;text-transform:uppercase}
+  .red{font-family:var(--font-display);font-weight:700;font-size:28px;letter-spacing:.06em;color:var(--acento)}
+</style>
+
+<div class="pieza fondo-{{fondo}}">
+  <div class="foto">
+    {{#imagen}}<img class="trat-{{tratamiento}}" src="{{imagen}}" alt="">{{/imagen}}
+    <div class="sello">{{#fondo_oxford}}{{{logo.isotipo.tea}}}{{/fondo_oxford}}{{^fondo_oxford}}{{{logo.isotipo.blanco}}}{{/fondo_oxford}}</div>
+  </div>
+  <div class="filo" aria-hidden="true"></div>
+  <div class="panel" data-ajustar>
+    {{#etiqueta}}<div class="etiqueta">{{etiqueta}}</div>{{/etiqueta}}
+    <h1 class="titulo{{#titulo_largo}} largo{{/titulo_largo}}">{{titulo}}</h1>
+    {{#texto}}<p class="texto">{{texto}}</p>{{/texto}}
+    <div class="datos">{{#datos}}<div class="dato"><b>{{valor}}</b><span>{{etiqueta}}</span></div>{{/datos}}</div>
+    <div class="cierre">
+      {{#cta}}<span class="cta">{{cta}}</span>{{/cta}}
+      <span class="red">{{contacto.instagram}}</span>
+    </div>
+  </div>
+</div>

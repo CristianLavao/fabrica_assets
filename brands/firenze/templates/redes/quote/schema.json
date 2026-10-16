@@ -1,0 +1,60 @@
+{
+  "archivo": "cita",
+  "campos": [
+    {
+      "id": "fondo",
+      "tipo": "opciones",
+      "label": "Fondo",
+      "opciones": [
+        {
+          "valor": "oxford",
+          "label": "Oxford"
+        },
+        {
+          "valor": "verde",
+          "label": "Verde"
+        },
+        {
+          "valor": "tea",
+          "label": "Tea"
+        },
+        {
+          "valor": "blanco",
+          "label": "Blanco"
+        }
+      ],
+      "ejemplo": "oxford"
+    },
+    {
+      "id": "etiqueta",
+      "tipo": "texto",
+      "label": "Etiqueta",
+      "max": 32,
+      "ejemplo": "Lo que dicen nuestros clientes"
+    },
+    {
+      "id": "cita",
+      "tipo": "parrafo",
+      "label": "Cita",
+      "max": 160,
+      "largo": 90,
+      "requerido": true,
+      "ayuda": "Sin comillas: el diseño las pone.",
+      "ejemplo": "Entregaron la obra a tiempo y cada decisión técnica tuvo una razón clara."
+    },
+    {
+      "id": "autor",
+      "tipo": "texto",
+      "label": "Autor",
+      "max": 40,
+      "ejemplo": "[Nombre del cliente]"
+    },
+    {
+      "id": "cargo",
+      "tipo": "texto",
+      "label": "Cargo y empresa",
+      "max": 60,
+      "ejemplo": "[Cargo · Empresa]"
+    }
+  ]
+}

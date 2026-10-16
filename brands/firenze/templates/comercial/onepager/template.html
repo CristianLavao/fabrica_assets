@@ -1,0 +1,63 @@
+<style>
+  /* Carta 8.5×11 in a 96 dpi = 816×1056 px; márgenes de 0.75 in (72 px) */
+  .pieza{width:816px;height:1056px;overflow:hidden;display:flex;flex-direction:column;background:var(--white);color:var(--oxford-blue);font-family:var(--font-body)}
+  .cab{flex:none;background:var(--castleton-green);color:var(--white);padding:48px 72px 40px;display:flex;flex-direction:column;gap:14px}
+  .cab-fila{display:flex;align-items:center;justify-content:space-between}
+  .nombre{width:150px}.nombre svg{display:block;width:100%;height:auto}
+  .etiqueta{margin-top:22px;font-family:var(--font-display);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--tea-green)}
+  .titulo{margin:0;font-family:var(--font-display);font-weight:500;font-size:38px;line-height:1.1;text-wrap:balance;max-width:600px}
+  .titulo.largo{font-size:32px}
+  .entrada{margin:0;font-size:15px;line-height:1.55;max-width:600px;white-space:pre-line}
+  .filo{height:6px;flex:none;background:var(--light-sea-green)}
+
+  .cuerpo{--a:var(--ajuste,1);flex:1;min-height:0;padding:36px 72px 28px;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:36px;overflow:hidden}
+  .seccion{font-family:var(--font-display);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--castleton-green);padding-bottom:12px;border-bottom:2px solid var(--castleton-green)}
+  .punto{display:grid;grid-template-columns:32px minmax(0,1fr);gap:4px 12px;padding:calc(14px * var(--a)) 0;border-bottom:1px solid var(--line)}
+  .p-num{font-family:var(--font-display);font-weight:700;font-size:12px;color:var(--light-sea-green)}
+  .p-titulo{font-family:var(--font-display);font-weight:700;font-size:calc(15px * var(--a))}
+  .p-texto{font-size:calc(13px * var(--a));line-height:1.5;color:var(--ink-muted)}
+
+  .lateral{display:flex;flex-direction:column;gap:20px;min-width:0}
+  .foto{width:100%;height:190px;object-fit:cover;display:block}
+  .datos{display:flex;flex-direction:column;gap:16px;padding:20px;background:var(--surface-alt)}
+  .datos:empty{display:none}
+  .dato b{display:block;font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1;color:var(--castleton-green)}
+  .dato span{font-size:13px;color:var(--ink-muted)}
+  .cierre{margin-top:auto;display:flex;flex-direction:column;gap:8px}
+  .cierre b{font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--castleton-green)}
+  .cierre p{margin:0;font-size:13px;line-height:1.5;color:var(--ink-muted)}
+
+  .pie{flex:none;background:var(--castleton-green);color:var(--white);padding:18px 72px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px;font-size:12px}
+  .pie span{display:flex;align-items:center;gap:8px}
+  .pie svg{width:14px;height:14px}
+  .pie .nit{margin-left:auto;color:var(--tea-green)}
+</style>
+
+<div class="pieza">
+  <div class="cab">
+    <div class="cab-fila">
+      <div class="nombre">{{{logo.nombre.blanco}}}</div>
+    </div>
+    {{#etiqueta}}<div class="etiqueta">{{etiqueta}}</div>{{/etiqueta}}
+    <h1 class="titulo{{#titulo_largo}} largo{{/titulo_largo}}">{{titulo}}</h1>
+    {{#texto}}<p class="entrada">{{texto}}</p>{{/texto}}
+  </div>
+  <div class="filo" aria-hidden="true"></div>
+  <div class="cuerpo" data-ajustar>
+    <div>
+      {{#puntos_n}}<div class="seccion">Qué incluye</div>{{/puntos_n}}
+      {{#puntos}}<div class="punto"><span class="p-num">{{@nn}}</span><div><div class="p-titulo">{{titulo}}</div>{{#texto}}<div class="p-texto">{{texto}}</div>{{/texto}}</div></div>{{/puntos}}
+    </div>
+    <div class="lateral">
+      {{#imagen}}<img class="trat-{{tratamiento}} foto" src="{{imagen}}" alt="">{{/imagen}}
+      <div class="datos">{{#datos}}<div class="dato"><b>{{valor}}</b><span>{{etiqueta}}</span></div>{{/datos}}</div>
+      {{#cierre}}<div class="cierre"><b>{{cierre}}</b>{{#cierre_texto}}<p>{{cierre_texto}}</p>{{/cierre_texto}}</div>{{/cierre}}
+    </div>
+  </div>
+  <div class="pie">
+    <span>{{{icono.mail.blanco}}}{{contacto.correo}}</span>
+    <span>{{{icono.phone.blanco}}}{{contacto.telefono}}</span>
+    <span>{{{icono.instagram.blanco}}}{{contacto.instagram}}</span>
+    <span class="nit">{{contacto.nit}}</span>
+  </div>
+</div>

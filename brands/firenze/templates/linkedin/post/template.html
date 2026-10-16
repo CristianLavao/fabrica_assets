@@ -1,0 +1,33 @@
+<style>
+  /* 1200×627: la imagen que LinkedIn muestra con un enlace o en un post */
+  .pieza{--fondo:var(--castleton-green);--texto:var(--white);--acento:var(--tea-green);--apoyo:var(--tea-green);
+    width:1200px;height:627px;overflow:hidden;display:flex;background:var(--fondo);color:var(--texto);font-family:var(--font-body)}
+  .fondo-oxford{--fondo:var(--oxford-blue);--acento:var(--light-sea-green)}
+  .fondo-blanco{--fondo:var(--white);--texto:var(--oxford-blue);--acento:var(--castleton-green);--apoyo:var(--ink-muted)}
+  .bloque{--a:var(--ajuste,1);flex:none;width:644px;padding:56px 56px 52px 64px;display:flex;flex-direction:column;overflow:hidden}
+  .nombre{width:160px}.nombre svg{display:block;width:100%;height:auto}
+  .grupo{margin-top:auto;display:flex;flex-direction:column;gap:calc(18px * var(--a))}
+  .etiqueta{font-family:var(--font-display);font-weight:700;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--acento)}
+  .regla{width:72px;height:5px;background:var(--light-sea-green)}
+  .titulo{margin:0;font-family:var(--font-display);font-weight:500;font-size:calc(50px * var(--a));line-height:1.08;text-wrap:balance}
+  .titulo.largo{font-size:calc(42px * var(--a))}
+  .fondo-blanco .titulo{color:var(--castleton-green)}
+  .texto{margin:0;font-size:calc(21px * var(--a));line-height:1.45;color:var(--apoyo);white-space:pre-line}
+  .filo{flex:none;width:12px;background:var(--light-sea-green)}
+  .lado{position:relative;flex:1;background:var(--oxford-blue);overflow:hidden}
+  .lado img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+</style>
+
+<div class="pieza fondo-{{fondo}}">
+  <div class="bloque" data-ajustar>
+    <div class="nombre">{{#fondo_blanco}}{{{logo.nombre.verde}}}{{/fondo_blanco}}{{^fondo_blanco}}{{{logo.nombre.blanco}}}{{/fondo_blanco}}</div>
+    <div class="grupo">
+      {{#etiqueta}}<div class="etiqueta">{{etiqueta}}</div>{{/etiqueta}}
+      <div class="regla"></div>
+      <h1 class="titulo{{#titulo_largo}} largo{{/titulo_largo}}">{{titulo}}</h1>
+      {{#texto}}<p class="texto">{{texto}}</p>{{/texto}}
+    </div>
+  </div>
+  <div class="filo" aria-hidden="true"></div>
+  <div class="lado">{{#imagen}}<img class="trat-{{tratamiento}}" src="{{imagen}}" alt="">{{/imagen}}</div>
+</div>

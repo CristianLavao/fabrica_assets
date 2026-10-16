@@ -1,0 +1,5 @@
+node_modules/
+dist/
+salida/
+# Fotos originales en alta resolución (las versiones de producción están en ds/project/assets/Fotografia)
+brands/*/photos/

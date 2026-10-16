@@ -1,0 +1,1 @@
+Iconos de contacto del manual (correo, teléfono, Instagram), de una sola tinta: `oxford` (oxford-blue) y `verde` (castleton-green) para fondos claros, y `blanco` para castleton-green u oxford-blue. Se usan a 20–24px, siempre al lado del dato que representan.

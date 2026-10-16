@@ -1,0 +1,27 @@
+<!-- Tratamiento de color de FIRENZE para fotografía (se inserta al inicio de cada pieza).
+     Pasa la foto a escala de grises y la remapea a los colores de marca:
+       verde: oxford-blue (sombras) → castleton-green (medios) → tea-green (luces)
+       azul:  oxford-blue (sombras) → lapis-lazuli (medios) → white (luces)
+     Uso en un template: <img class="trat-{{tratamiento}}" …> con el campo «tratamiento». -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="fz-duo-verde" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.051 0.059 0.867"/>
+      <feFuncG type="table" tableValues="0.082 0.345 0.929"/>
+      <feFuncB type="table" tableValues="0.180 0.239 0.667"/>
+    </feComponentTransfer>
+  </filter>
+  <filter id="fz-duo-azul" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.051 0.133 1"/>
+      <feFuncG type="table" tableValues="0.082 0.380 1"/>
+      <feFuncB type="table" tableValues="0.180 0.533 1"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
+<style>
+  .trat-verde{filter:url(#fz-duo-verde)}
+  .trat-azul{filter:url(#fz-duo-azul)}
+</style>

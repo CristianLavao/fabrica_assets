@@ -1,0 +1,159 @@
+{
+  "campos": [
+    {
+      "id": "etiqueta",
+      "tipo": "texto",
+      "label": "Etiqueta de campaña",
+      "max": 28,
+      "ejemplo": "Campaña 2026"
+    },
+    {
+      "id": "titulo",
+      "tipo": "texto",
+      "label": "Título",
+      "max": 80,
+      "requerido": true,
+      "ejemplo": "Construye tu próximo proyecto con un solo equipo"
+    },
+    {
+      "id": "texto",
+      "tipo": "parrafo",
+      "label": "Texto principal",
+      "max": 200,
+      "ejemplo": "Diseño, obra e interventoría coordinados desde el primer plano hasta la entrega."
+    },
+    {
+      "id": "cta",
+      "tipo": "texto",
+      "label": "Botón principal",
+      "max": 28,
+      "ejemplo": "Solicitar propuesta"
+    },
+    {
+      "id": "enlace",
+      "tipo": "texto",
+      "label": "Enlace del botón",
+      "max": 200,
+      "ayuda": "URL de formulario o WhatsApp. Vacío: baja a la sección de contacto.",
+      "ejemplo": "",
+      "formato": "url"
+    },
+    {
+      "id": "seccion",
+      "tipo": "texto",
+      "label": "Título de la sección de puntos",
+      "max": 60,
+      "ejemplo": "Ingeniería que se nota en cada etapa"
+    },
+    {
+      "id": "puntos",
+      "tipo": "lista",
+      "label": "Puntos",
+      "item": "punto",
+      "max": 6,
+      "subcampos": [
+        {
+          "id": "titulo",
+          "label": "Título",
+          "max": 36
+        },
+        {
+          "id": "texto",
+          "label": "Texto",
+          "tipo": "parrafo",
+          "max": 120
+        }
+      ],
+      "ejemplo": [
+        {
+          "titulo": "Diseño",
+          "texto": "Arquitectura e ingeniería con criterio sostenible."
+        },
+        {
+          "titulo": "Construcción",
+          "texto": "Ejecución de obra con control de calidad."
+        },
+        {
+          "titulo": "Interventoría",
+          "texto": "Supervisión técnica, presupuesto y cronograma."
+        }
+      ]
+    },
+    {
+      "id": "datos",
+      "tipo": "lista",
+      "label": "Datos clave",
+      "item": "cifra",
+      "max": 4,
+      "compacto": true,
+      "subcampos": [
+        {
+          "id": "valor",
+          "label": "Cifra",
+          "placeholder": "120"
+        },
+        {
+          "id": "etiqueta",
+          "label": "Qué mide",
+          "placeholder": "proyectos entregados"
+        }
+      ],
+      "ejemplo": [
+        {
+          "valor": "[00]",
+          "etiqueta": "[proyectos entregados]"
+        },
+        {
+          "valor": "[00]",
+          "etiqueta": "[m² construidos]"
+        },
+        {
+          "valor": "[00]",
+          "etiqueta": "[años de experiencia]"
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "tipo": "texto",
+      "label": "Título de cierre",
+      "max": 50,
+      "ejemplo": "Hablemos de tu proyecto"
+    },
+    {
+      "id": "cierre_texto",
+      "tipo": "parrafo",
+      "label": "Texto de cierre",
+      "max": 140,
+      "ejemplo": "Te respondemos en menos de 48 horas con una primera propuesta."
+    },
+    {
+      "id": "imagen",
+      "tipo": "imagen",
+      "label": "Imagen de portada",
+      "ejemplo": "ds/project/assets/Fotografia/rascacielos-contrapicado.jpg"
+    },
+    {
+      "id": "tratamiento",
+      "tipo": "opciones",
+      "label": "Color de la foto",
+      "visibleSi": "imagen",
+      "ayuda": "Duotono con los colores de marca: unifica fotos de distintas fuentes.",
+      "opciones": [
+        {
+          "valor": "verde",
+          "label": "Verde"
+        },
+        {
+          "valor": "azul",
+          "label": "Azul"
+        },
+        {
+          "valor": "original",
+          "label": "Original"
+        }
+      ],
+      "ejemplo": "verde"
+    }
+  ]
+}

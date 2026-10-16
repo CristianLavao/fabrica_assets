@@ -1,0 +1,17 @@
+{
+  "campos": [
+    { "id": "fondo", "tipo": "opciones", "label": "Fondo", "opciones": [
+      { "valor": "verde", "label": "Verde" },
+      { "valor": "oxford", "label": "Oxford" },
+      { "valor": "blanco", "label": "Blanco" }
+    ], "ejemplo": "verde" },
+    { "id": "etiqueta", "tipo": "texto", "label": "Etiqueta", "max": 28, "ejemplo": "Caso de éxito" },
+    { "id": "titulo", "tipo": "texto", "label": "Título", "max": 70, "largo": 44, "requerido": true, "ejemplo": "Cómo entregamos la Torre Altavista dos semanas antes" },
+    { "id": "texto", "tipo": "parrafo", "label": "Texto", "max": 120, "ejemplo": "Planeación por frentes de obra y control semanal de presupuesto." },
+    { "id": "imagen", "tipo": "imagen", "label": "Imagen", "ayuda": "Ocupa el bloque derecho (544×627).", "ejemplo": "ds/project/assets/Fotografia/edificios-residenciales.jpg" },
+    { "id": "tratamiento", "tipo": "opciones", "label": "Color de la foto", "visibleSi": "imagen",
+      "ayuda": "Duotono con los colores de marca: unifica fotos de distintas fuentes.",
+      "opciones": [ { "valor": "verde", "label": "Verde" }, { "valor": "azul", "label": "Azul" }, { "valor": "original", "label": "Original" } ],
+      "ejemplo": "verde" }
+  ]
+}

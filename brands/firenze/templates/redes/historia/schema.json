@@ -1,0 +1,114 @@
+{
+  "campos": [
+    {
+      "id": "fondo",
+      "tipo": "opciones",
+      "label": "Fondo del panel",
+      "opciones": [
+        {
+          "valor": "verde",
+          "label": "Verde"
+        },
+        {
+          "valor": "oxford",
+          "label": "Oxford"
+        }
+      ],
+      "ejemplo": "verde"
+    },
+    {
+      "id": "imagen",
+      "tipo": "imagen",
+      "label": "Imagen superior",
+      "ayuda": "Ocupa la parte de arriba (1080×860). Sin imagen, el bloque queda en color de marca.",
+      "ejemplo": "ds/project/assets/Fotografia/obra-en-construccion.jpg"
+    },
+    {
+      "id": "tratamiento",
+      "tipo": "opciones",
+      "label": "Color de la foto",
+      "visibleSi": "imagen",
+      "ayuda": "Duotono con los colores de marca: unifica fotos de distintas fuentes.",
+      "opciones": [
+        {
+          "valor": "verde",
+          "label": "Verde"
+        },
+        {
+          "valor": "azul",
+          "label": "Azul"
+        },
+        {
+          "valor": "original",
+          "label": "Original"
+        }
+      ],
+      "ejemplo": "verde"
+    },
+    {
+      "id": "etiqueta",
+      "tipo": "texto",
+      "label": "Etiqueta",
+      "max": 28,
+      "ejemplo": "Avance de obra"
+    },
+    {
+      "id": "titulo",
+      "tipo": "texto",
+      "label": "Título",
+      "max": 60,
+      "largo": 34,
+      "requerido": true,
+      "ejemplo": "Estructura completa en 14 semanas"
+    },
+    {
+      "id": "texto",
+      "tipo": "parrafo",
+      "label": "Texto",
+      "max": 140,
+      "ejemplo": "Seguimos el cronograma con control de calidad en cada etapa."
+    },
+    {
+      "id": "datos",
+      "tipo": "lista",
+      "label": "Datos clave",
+      "item": "cifra",
+      "max": 3,
+      "compacto": true,
+      "subcampos": [
+        {
+          "id": "valor",
+          "label": "Cifra",
+          "placeholder": "14"
+        },
+        {
+          "id": "etiqueta",
+          "label": "Qué mide",
+          "placeholder": "semanas"
+        }
+      ],
+      "ejemplo": [
+        {
+          "valor": "14",
+          "etiqueta": "semanas"
+        },
+        {
+          "valor": "12",
+          "etiqueta": "pisos"
+        },
+        {
+          "valor": "0",
+          "etiqueta": "accidentes"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "tipo": "texto",
+      "label": "Llamada a la acción",
+      "max": 22,
+      "ayuda": "Verbo corto. Queda fuera de la zona que tapa la app.",
+      "ejemplo": "Escríbenos"
+    }
+  ]
+}

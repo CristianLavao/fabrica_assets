@@ -1,0 +1,146 @@
+{
+  "campos": [
+    {
+      "id": "etiqueta",
+      "tipo": "texto",
+      "label": "Etiqueta",
+      "max": 24,
+      "ejemplo": "Servicio"
+    },
+    {
+      "id": "titulo",
+      "tipo": "texto",
+      "label": "Nombre del servicio",
+      "max": 60,
+      "largo": 36,
+      "requerido": true,
+      "ejemplo": "Interventoría técnica de obra"
+    },
+    {
+      "id": "texto",
+      "tipo": "parrafo",
+      "label": "Entrada",
+      "max": 180,
+      "ejemplo": "Supervisamos cada etapa para que el proyecto cumpla diseño, presupuesto y cronograma."
+    },
+    {
+      "id": "puntos",
+      "tipo": "lista",
+      "label": "Qué incluye",
+      "item": "punto",
+      "max": 6,
+      "ayuda": "Hasta 6. Se muestran como tabla numerada.",
+      "subcampos": [
+        {
+          "id": "titulo",
+          "label": "Título",
+          "max": 36
+        },
+        {
+          "id": "texto",
+          "label": "Texto",
+          "tipo": "parrafo",
+          "max": 90
+        }
+      ],
+      "ejemplo": [
+        {
+          "titulo": "Revisión de diseños",
+          "texto": "Verificamos planos y especificaciones antes de construir."
+        },
+        {
+          "titulo": "Control de calidad",
+          "texto": "Ensayos de materiales y registro de cada inspección."
+        },
+        {
+          "titulo": "Seguimiento de presupuesto",
+          "texto": "Informe mensual de avance físico y financiero."
+        },
+        {
+          "titulo": "Gestión de cronograma",
+          "texto": "Alertas tempranas y planes de recuperación."
+        },
+        {
+          "titulo": "Seguridad en obra",
+          "texto": "Cumplimiento de protocolos y normativa vigente."
+        },
+        {
+          "titulo": "Entrega y cierre",
+          "texto": "Actas, manuales y garantías documentadas."
+        }
+      ]
+    },
+    {
+      "id": "datos",
+      "tipo": "lista",
+      "label": "Datos clave",
+      "item": "cifra",
+      "max": 3,
+      "compacto": true,
+      "subcampos": [
+        {
+          "id": "valor",
+          "label": "Cifra",
+          "placeholder": "40"
+        },
+        {
+          "id": "etiqueta",
+          "label": "Qué mide",
+          "placeholder": "proyectos supervisados"
+        }
+      ],
+      "ejemplo": [
+        {
+          "valor": "[00]",
+          "etiqueta": "[proyectos supervisados]"
+        },
+        {
+          "valor": "[00]",
+          "etiqueta": "[m² intervenidos]"
+        }
+      ]
+    },
+    {
+      "id": "imagen",
+      "tipo": "imagen",
+      "label": "Imagen",
+      "ejemplo": "ds/project/assets/Fotografia/planos-arquitecto.jpg"
+    },
+    {
+      "id": "tratamiento",
+      "tipo": "opciones",
+      "label": "Color de la foto",
+      "visibleSi": "imagen",
+      "ayuda": "Duotono con los colores de marca: unifica fotos de distintas fuentes.",
+      "opciones": [
+        {
+          "valor": "verde",
+          "label": "Verde"
+        },
+        {
+          "valor": "azul",
+          "label": "Azul"
+        },
+        {
+          "valor": "original",
+          "label": "Original"
+        }
+      ],
+      "ejemplo": "verde"
+    },
+    {
+      "id": "cierre",
+      "tipo": "texto",
+      "label": "Llamada final",
+      "max": 40,
+      "ejemplo": "Solicita una propuesta"
+    },
+    {
+      "id": "cierre_texto",
+      "tipo": "parrafo",
+      "label": "Texto de la llamada",
+      "max": 120,
+      "ejemplo": "Visitamos tu proyecto y te enviamos un plan de interventoría en 5 días hábiles."
+    }
+  ]
+}

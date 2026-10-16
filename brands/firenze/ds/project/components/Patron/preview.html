@@ -1,0 +1,23 @@
+<!-- @dsCard group="Marca" height=200 subtitle="Patrón de la papelería, con el nombre del logo" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Patrón</title>
+<style>
+  body{margin:0}
+  .patron{background:var(--castleton-green);height:200px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:12px}
+  .fila{display:flex;gap:28px;opacity:.22;white-space:nowrap}
+  .fila img{height:22px;width:auto;flex:none}
+  .fila:nth-child(even){margin-left:-76px}
+</style></head>
+<body>
+<div class="patron" aria-hidden="true"></div>
+<script>
+  var p = document.querySelector('.patron');
+  for (var i = 0; i < 6; i++) {
+    var d = document.createElement('div'); d.className = 'fila';
+    for (var j = 0; j < 9; j++) { var im = document.createElement('img'); im.alt = ''; im.src = '/_blob/955be8f252aba9b4e9338dd04bfa0087'; d.appendChild(im); }
+    p.appendChild(d);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{
+  "campos": [
+    {
+      "id": "fondo",
+      "tipo": "opciones",
+      "label": "Fondo",
+      "opciones": [
+        {
+          "valor": "verde",
+          "label": "Verde"
+        },
+        {
+          "valor": "oxford",
+          "label": "Oxford"
+        }
+      ],
+      "ejemplo": "verde"
+    },
+    {
+      "id": "etiqueta",
+      "tipo": "texto",
+      "label": "Tipo de presentación",
+      "max": 32,
+      "ejemplo": "Propuesta de servicios"
+    },
+    {
+      "id": "titulo",
+      "tipo": "texto",
+      "label": "Título",
+      "max": 70,
+      "largo": 42,
+      "requerido": true,
+      "ejemplo": "Gestión integral del proyecto Torre Altavista"
+    },
+    {
+      "id": "texto",
+      "tipo": "texto",
+      "label": "Subtítulo",
+      "max": 90,
+      "ejemplo": "Diseño, construcción e interventoría con un solo equipo."
+    },
+    {
+      "id": "cliente",
+      "tipo": "texto",
+      "label": "Preparado para",
+      "max": 40,
+      "ejemplo": "[Cliente]"
+    },
+    {
+      "id": "fecha",
+      "tipo": "texto",
+      "label": "Fecha",
+      "max": 30,
+      "ejemplo": "[Octubre 2026]"
+    },
+    {
+      "id": "imagen",
+      "tipo": "imagen",
+      "label": "Imagen",
+      "ejemplo": "ds/project/assets/Fotografia/edificios-residenciales.jpg"
+    },
+    {
+      "id": "tratamiento",
+      "tipo": "opciones",
+      "label": "Color de la foto",
+      "visibleSi": "imagen",
+      "ayuda": "Duotono con los colores de marca: unifica fotos de distintas fuentes.",
+      "opciones": [
+        {
+          "valor": "verde",
+          "label": "Verde"
+        },
+        {
+          "valor": "azul",
+          "label": "Azul"
+        },
+        {
+          "valor": "original",
+          "label": "Original"
+        }
+      ],
+      "ejemplo": "verde"
+    }
+  ]
+}

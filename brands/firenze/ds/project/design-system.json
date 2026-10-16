@@ -1,0 +1,341 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "Fotografia": {
+      "files": {
+        "edificios-oficinas.jpg": {
+          "blob": "68ff741af007968984f4459337723d3c",
+          "name": "edificios-oficinas.jpg",
+          "size": 570007,
+          "type": "image/jpeg"
+        },
+        "edificios-residenciales.jpg": {
+          "blob": "210aaa167d1b50345575cb3a88b3f63f",
+          "name": "edificios-residenciales.jpg",
+          "size": 436323,
+          "type": "image/jpeg"
+        },
+        "ingeniero-con-planos.jpg": {
+          "blob": "2f1fc55d8149a0069c052a6080a05ea8",
+          "name": "ingeniero-con-planos.jpg",
+          "size": 138096,
+          "type": "image/jpeg"
+        },
+        "obra-en-construccion.jpg": {
+          "blob": "89a7fe110b420926c2986c1ebdff8d93",
+          "name": "obra-en-construccion.jpg",
+          "size": 343230,
+          "type": "image/jpeg"
+        },
+        "planos-arquitecto.jpg": {
+          "blob": "d093568679bc8b55f5a3acc9320b7ba6",
+          "name": "planos-arquitecto.jpg",
+          "size": 280778,
+          "type": "image/jpeg"
+        },
+        "rascacielos-contrapicado.jpg": {
+          "blob": "403a120e646aaa269159996e2be4ef4e",
+          "name": "rascacielos-contrapicado.jpg",
+          "size": 641956,
+          "type": "image/jpeg"
+        }
+      },
+      "name": "Fotografia",
+      "order": [
+        "edificios-oficinas.jpg",
+        "edificios-residenciales.jpg",
+        "ingeniero-con-planos.jpg",
+        "obra-en-construccion.jpg",
+        "planos-arquitecto.jpg",
+        "rascacielos-contrapicado.jpg"
+      ],
+      "tile": "m"
+    },
+    "Icons": {
+      "files": {
+        "instagram-blanco.svg": {
+          "blob": "99e6c7f90fe84f0137f3e3942db4c13f",
+          "name": "instagram-blanco.svg",
+          "size": 710,
+          "type": "image/svg+xml"
+        },
+        "instagram-oxford.svg": {
+          "blob": "6d4da98cc99214b5f52b02090261b258",
+          "name": "instagram-oxford.svg",
+          "size": 710,
+          "type": "image/svg+xml"
+        },
+        "instagram-verde.svg": {
+          "blob": "336d3beadb73472bebebe1cb66a18faa",
+          "name": "instagram-verde.svg",
+          "size": 710,
+          "type": "image/svg+xml"
+        },
+        "mail-blanco.svg": {
+          "blob": "1de1d1acb36b4058fc9761a1d6ad68b3",
+          "name": "mail-blanco.svg",
+          "size": 618,
+          "type": "image/svg+xml"
+        },
+        "mail-oxford.svg": {
+          "blob": "ab32c4cf068edee6aeaf24e1372411e2",
+          "name": "mail-oxford.svg",
+          "size": 618,
+          "type": "image/svg+xml"
+        },
+        "mail-verde.svg": {
+          "blob": "432eb255052bc982657604b65ae10371",
+          "name": "mail-verde.svg",
+          "size": 618,
+          "type": "image/svg+xml"
+        },
+        "phone-blanco.svg": {
+          "blob": "23e0bfb4e1340fb7827af619d77d22f8",
+          "name": "phone-blanco.svg",
+          "size": 408,
+          "type": "image/svg+xml"
+        },
+        "phone-oxford.svg": {
+          "blob": "ccd3c21e1f82d10e66a8ec92a459d0ca",
+          "name": "phone-oxford.svg",
+          "size": 408,
+          "type": "image/svg+xml"
+        },
+        "phone-verde.svg": {
+          "blob": "d7ad073f08252eeefcbf8ce41a4ecaac",
+          "name": "phone-verde.svg",
+          "size": 408,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Icons",
+      "order": [
+        "instagram-blanco.svg",
+        "instagram-oxford.svg",
+        "instagram-verde.svg",
+        "mail-blanco.svg",
+        "mail-oxford.svg",
+        "mail-verde.svg",
+        "phone-blanco.svg",
+        "phone-oxford.svg",
+        "phone-verde.svg"
+      ],
+      "tile": "xs"
+    },
+    "Logos": {
+      "files": {
+        "firenze-hoja-blanco.svg": {
+          "blob": "5522fa5cf688cd3e0d5725cb63d8adc8",
+          "name": "firenze-hoja-blanco.svg",
+          "size": 363,
+          "type": "image/svg+xml"
+        },
+        "firenze-hoja-lapis.svg": {
+          "blob": "a3d93e1d087ef244b480c17eb8562c67",
+          "name": "firenze-hoja-lapis.svg",
+          "size": 363,
+          "type": "image/svg+xml"
+        },
+        "firenze-hoja-oxford.svg": {
+          "blob": "3657539645822214b761c8725423d64e",
+          "name": "firenze-hoja-oxford.svg",
+          "size": 363,
+          "type": "image/svg+xml"
+        },
+        "firenze-hoja-tea.svg": {
+          "blob": "d81ad611c72cfa852fb60797a3b47092",
+          "name": "firenze-hoja-tea.svg",
+          "size": 363,
+          "type": "image/svg+xml"
+        },
+        "firenze-hoja-verde.svg": {
+          "blob": "06a9ac551a62fe1afc3b5e375b66ee54",
+          "name": "firenze-hoja-verde.svg",
+          "size": 363,
+          "type": "image/svg+xml"
+        },
+        "firenze-horizontal-blanco.svg": {
+          "blob": "2ee764291c79edce55172149d12b85b4",
+          "name": "firenze-horizontal-blanco.svg",
+          "size": 6682,
+          "type": "image/svg+xml"
+        },
+        "firenze-horizontal-lapis.svg": {
+          "blob": "9bdc7dbdc7292ea51f12e46ba7a18148",
+          "name": "firenze-horizontal-lapis.svg",
+          "size": 6682,
+          "type": "image/svg+xml"
+        },
+        "firenze-horizontal-oxford.svg": {
+          "blob": "e847e4decab8fcf9d48d35272e2ce9d2",
+          "name": "firenze-horizontal-oxford.svg",
+          "size": 6682,
+          "type": "image/svg+xml"
+        },
+        "firenze-horizontal-tea.svg": {
+          "blob": "f5e0961fc32085b3cb9032a9b999db86",
+          "name": "firenze-horizontal-tea.svg",
+          "size": 6682,
+          "type": "image/svg+xml"
+        },
+        "firenze-horizontal-verde.svg": {
+          "blob": "e5fc53cfb2d5c93e88be232bdd96805c",
+          "name": "firenze-horizontal-verde.svg",
+          "size": 6682,
+          "type": "image/svg+xml"
+        },
+        "firenze-isotipo-blanco.svg": {
+          "blob": "ca956befc962684906ef1f4883cd8510",
+          "name": "firenze-isotipo-blanco.svg",
+          "size": 2564,
+          "type": "image/svg+xml"
+        },
+        "firenze-isotipo-lapis.svg": {
+          "blob": "32857665fedafb14e590dae11b9c0fc0",
+          "name": "firenze-isotipo-lapis.svg",
+          "size": 2564,
+          "type": "image/svg+xml"
+        },
+        "firenze-isotipo-oxford.svg": {
+          "blob": "288806c3530cd7c87eb13bccb60420c2",
+          "name": "firenze-isotipo-oxford.svg",
+          "size": 2564,
+          "type": "image/svg+xml"
+        },
+        "firenze-isotipo-tea.svg": {
+          "blob": "7193331b7512ccd94b3aee3e53da59ee",
+          "name": "firenze-isotipo-tea.svg",
+          "size": 2564,
+          "type": "image/svg+xml"
+        },
+        "firenze-isotipo-verde.svg": {
+          "blob": "a2a63beaa5fd00d9862e87819e2fe6ce",
+          "name": "firenze-isotipo-verde.svg",
+          "size": 2564,
+          "type": "image/svg+xml"
+        },
+        "firenze-vertical-blanco.svg": {
+          "blob": "cf48c7c301b34981a3d1deafb1dfffc8",
+          "name": "firenze-vertical-blanco.svg",
+          "size": 6265,
+          "type": "image/svg+xml"
+        },
+        "firenze-vertical-lapis.svg": {
+          "blob": "c3e3d8124e8135b973309fb43e01773e",
+          "name": "firenze-vertical-lapis.svg",
+          "size": 6265,
+          "type": "image/svg+xml"
+        },
+        "firenze-vertical-original.svg": {
+          "blob": "63d289e16ba32792458f546d0f09fc47",
+          "name": "firenze-vertical-original.svg",
+          "size": 6265,
+          "type": "image/svg+xml"
+        },
+        "firenze-vertical-oxford.svg": {
+          "blob": "130c7be13528b5e916a4bd6e9dd914bd",
+          "name": "firenze-vertical-oxford.svg",
+          "size": 6265,
+          "type": "image/svg+xml"
+        },
+        "firenze-vertical-tea.svg": {
+          "blob": "d8ef10eb042184c9302e0c47c610ac5d",
+          "name": "firenze-vertical-tea.svg",
+          "size": 6265,
+          "type": "image/svg+xml"
+        },
+        "firenze-vertical-verde.svg": {
+          "blob": "0fa9819a08eef92dd77551d0fc5b4c1e",
+          "name": "firenze-vertical-verde.svg",
+          "size": 6265,
+          "type": "image/svg+xml"
+        },
+        "firenze-nombre-verde.svg": {
+          "blob": "84ee578ea9df2451eff99891157f8270",
+          "name": "firenze-nombre-verde.svg",
+          "size": 3486,
+          "type": "image/svg+xml"
+        },
+        "firenze-nombre-blanco.svg": {
+          "blob": "364fa2d6505de9032ec917cd394e2d06",
+          "name": "firenze-nombre-blanco.svg",
+          "size": 3486,
+          "type": "image/svg+xml"
+        },
+        "firenze-nombre-tea.svg": {
+          "blob": "955be8f252aba9b4e9338dd04bfa0087",
+          "name": "firenze-nombre-tea.svg",
+          "size": 3486,
+          "type": "image/svg+xml"
+        },
+        "firenze-nombre-lapis.svg": {
+          "blob": "306789f55d14ca63d3ebaaf968d1608f",
+          "name": "firenze-nombre-lapis.svg",
+          "size": 3486,
+          "type": "image/svg+xml"
+        },
+        "firenze-nombre-oxford.svg": {
+          "blob": "b2bb6bc3748927ec8b5531bb84ed6449",
+          "name": "firenze-nombre-oxford.svg",
+          "size": 3486,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Logos",
+      "order": [
+        "firenze-nombre-verde.svg",
+        "firenze-nombre-blanco.svg",
+        "firenze-nombre-tea.svg",
+        "firenze-nombre-oxford.svg",
+        "firenze-nombre-lapis.svg",
+        "firenze-hoja-blanco.svg",
+        "firenze-hoja-lapis.svg",
+        "firenze-hoja-oxford.svg",
+        "firenze-hoja-tea.svg",
+        "firenze-hoja-verde.svg",
+        "firenze-horizontal-blanco.svg",
+        "firenze-horizontal-lapis.svg",
+        "firenze-horizontal-oxford.svg",
+        "firenze-horizontal-tea.svg",
+        "firenze-horizontal-verde.svg",
+        "firenze-isotipo-blanco.svg",
+        "firenze-isotipo-lapis.svg",
+        "firenze-isotipo-oxford.svg",
+        "firenze-isotipo-tea.svg",
+        "firenze-isotipo-verde.svg",
+        "firenze-vertical-blanco.svg",
+        "firenze-vertical-lapis.svg",
+        "firenze-vertical-original.svg",
+        "firenze-vertical-oxford.svg",
+        "firenze-vertical-tea.svg",
+        "firenze-vertical-verde.svg"
+      ],
+      "tile": "l"
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-10-15T23:55:00Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "groups": [
+    "Logos",
+    "Icons",
+    "Fotografia"
+  ],
+  "lastChange": {
+    "at": "2026-10-16T01:55:00Z",
+    "by": "Claude",
+    "via": "Claude Code",
+    "note": "Iconos blancos de teléfono e Instagram con el detalle interior visible"
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "Firenze",
+  "sections": {},
+  "title": "FIRENZE"
+}

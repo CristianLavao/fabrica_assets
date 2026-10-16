@@ -1,0 +1,40 @@
+{
+  "campos": [
+    { "id": "fondo", "tipo": "opciones", "label": "Fondo de portada", "opciones": [
+      { "valor": "verde", "label": "Verde" },
+      { "valor": "oxford", "label": "Oxford" }
+    ], "ejemplo": "verde" },
+    { "id": "etiqueta", "tipo": "texto", "label": "Tipo de presentación", "max": 32, "ejemplo": "Presentación corporativa" },
+    { "id": "titulo", "tipo": "texto", "label": "Título", "max": 70, "largo": 42, "requerido": true, "ejemplo": "Ingeniería que se nota en cada etapa" },
+    { "id": "texto", "tipo": "texto", "label": "Subtítulo", "max": 90, "ejemplo": "Diseño, construcción e interventoría con un solo equipo." },
+    { "id": "cliente", "tipo": "texto", "label": "Preparado para", "max": 40, "ejemplo": "[Cliente]" },
+    { "id": "fecha", "tipo": "texto", "label": "Fecha", "max": 30, "ejemplo": "[Octubre 2026]" },
+    { "id": "imagen", "tipo": "imagen", "label": "Imagen de portada", "ejemplo": "ds/project/assets/Fotografia/edificios-residenciales.jpg" },
+    { "id": "tratamiento", "tipo": "opciones", "label": "Color de las fotos", "visibleSi": "imagen",
+      "ayuda": "Se aplica a todas las fotos del deck.",
+      "opciones": [ { "valor": "verde", "label": "Verde" }, { "valor": "azul", "label": "Azul" }, { "valor": "original", "label": "Original" } ],
+      "ejemplo": "verde" },
+    { "id": "diapositivas", "tipo": "lista", "label": "Diapositivas", "item": "diapositiva", "max": 6,
+      "ayuda": "Entre 3 y 6, más portada y cierre (5 a 8 en total). Diseño: texto con viñetas, cifra grande o foto.",
+      "subcampos": [
+        { "id": "diseno", "label": "Diseño", "tipo": "opciones", "opciones": [
+          { "valor": "texto", "label": "Texto con viñetas" },
+          { "valor": "cifra", "label": "Cifra grande" },
+          { "valor": "foto", "label": "Foto y texto" }
+        ] },
+        { "id": "titulo", "label": "Título", "max": 60 },
+        { "id": "texto", "label": "Puntos (uno por línea)", "tipo": "parrafo", "lineas": true, "filas": 4, "max": 360 },
+        { "id": "cifra", "label": "Cifra (diseño «Cifra grande»)", "max": 10 },
+        { "id": "cifra_texto", "label": "Qué mide la cifra", "max": 40 },
+        { "id": "imagen", "label": "Foto (diseño «Foto y texto»)", "tipo": "imagen" }
+      ],
+      "ejemplo": [
+        { "diseno": "texto", "titulo": "Quiénes somos", "texto": "Gestión integral de proyectos de ingeniería\nDiseño vanguardista con criterio sostenible\nUn solo equipo del primer plano a la entrega", "cifra": "", "cifra_texto": "", "imagen": "" },
+        { "diseno": "foto", "titulo": "Cómo trabajamos", "texto": "Planeación por frentes de obra\nControl semanal de presupuesto y cronograma\nInterventoría independiente en cada pago", "cifra": "", "cifra_texto": "", "imagen": "ds/project/assets/Fotografia/ingeniero-con-planos.jpg" },
+        { "diseno": "cifra", "titulo": "Resultados que se pueden medir", "texto": "Proyectos entregados dentro del plazo pactado\nSin sobrecostos por órdenes de cambio", "cifra": "[00]", "cifra_texto": "[proyectos entregados]", "imagen": "" },
+        { "diseno": "texto", "titulo": "Próximos pasos", "texto": "Visita técnica al predio\nPropuesta detallada en 5 días hábiles\nReunión de arranque con el equipo", "cifra": "", "cifra_texto": "", "imagen": "" }
+      ] },
+    { "id": "cierre", "tipo": "texto", "label": "Título de cierre", "max": 50, "ejemplo": "Hablemos de tu proyecto" },
+    { "id": "cierre_texto", "tipo": "parrafo", "label": "Texto de cierre", "max": 140, "ejemplo": "Te respondemos en menos de 48 horas con una primera propuesta." }
+  ]
+}

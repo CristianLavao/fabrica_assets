@@ -1,0 +1,88 @@
+<style>
+  /* --ajuste (1 → 0.62) lo fija el ajuste automático cuando el contenido no cabe */
+  .pieza{--a:var(--ajuste,1);position:relative;width:1080px;height:1080px;overflow:hidden;display:flex;flex-direction:column;padding:var(--space-6);background:var(--castleton-green);color:var(--white)}
+  .pieza.fondo-oxford{background:var(--oxford-blue)}
+  .pieza.fondo-blanco{background:var(--white);color:var(--oxford-blue)}
+
+  .foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .velo{position:absolute;inset:0;background:var(--castleton-green);opacity:.8}
+  .pieza > *:not(.foto):not(.velo){position:relative}
+
+  .etiqueta{font-family:var(--font-display);font-weight:700;font-size:24px;line-height:28px;letter-spacing:.16em;text-transform:uppercase;color:var(--tea-green);max-width:700px}
+  .fondo-oxford .etiqueta{color:var(--light-sea-green)}
+  .fondo-blanco .etiqueta{color:var(--castleton-green)}
+
+  .cuerpo{margin-top:auto;display:flex;flex-direction:column;gap:calc(28px * var(--a))}
+  .regla{width:96px;height:6px;background:var(--light-sea-green)}
+  .titulo{margin:0;font-family:var(--font-display);font-weight:500;font-size:calc(96px * var(--a));line-height:1.04;letter-spacing:-.005em;text-wrap:balance;max-width:940px}
+  .titulo.largo{font-size:calc(76px * var(--a))}
+  .con-puntos .titulo{font-size:calc(80px * var(--a))}
+  .con-puntos .titulo.largo{font-size:calc(64px * var(--a))}
+  .fondo-blanco .titulo{color:var(--castleton-green)}
+  .texto{margin:0;font-family:var(--font-body);font-size:calc(32px * var(--a));line-height:1.38;max-width:860px;white-space:pre-line;color:var(--white)}
+  .fondo-oxford .texto{color:var(--tea-green)}
+  .fondo-blanco .texto{color:var(--ink-muted)}
+
+  /* ---- Puntos (máx. 3 en un post): se reparten según la cantidad ---- */
+  .puntos{display:grid;gap:calc(16px * var(--a));margin-top:calc(8px * var(--a))}
+  .p-num{font-family:var(--font-display);font-weight:700;font-size:calc(20px * var(--a));letter-spacing:.08em;color:var(--light-sea-green)}
+  .fondo-verde .p-num,.fondo-foto .p-num{color:var(--tea-green)}
+  .p-titulo{font-family:var(--font-display);font-weight:700;font-size:calc(30px * var(--a));line-height:1.15}
+  .p-texto{font-family:var(--font-body);font-size:calc(23px * var(--a));line-height:1.35;opacity:.92}
+  .fondo-blanco .p-titulo{color:var(--castleton-green)}
+  .fondo-blanco .p-texto{color:var(--ink-muted);opacity:1}
+
+  /* Tarjetas: una columna por punto */
+  .puntos.tarjetas{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .puntos.tarjetas.n-1{grid-template-columns:1fr}
+  .puntos.tarjetas.n-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tarjetas .punto{display:flex;flex-direction:column;gap:calc(10px * var(--a));padding:calc(26px * var(--a));border-top:4px solid var(--light-sea-green);background:color-mix(in srgb,var(--white) 8%,transparent)}
+  .fondo-oxford .tarjetas .punto{background:color-mix(in srgb,var(--white) 6%,transparent)}
+  .fondo-blanco .tarjetas .punto{background:var(--surface-alt)}
+
+  /* Lista: marcador cuadrado del sello + título y texto en línea */
+  .puntos.lista{gap:calc(18px * var(--a))}
+  .lista .punto{display:grid;grid-template-columns:calc(18px * var(--a)) minmax(0,1fr);column-gap:calc(22px * var(--a));align-items:baseline}
+  .lista .p-num{display:none}
+  .lista .punto::before{content:"";width:calc(14px * var(--a));height:calc(14px * var(--a));background:var(--light-sea-green);transform:translateY(-.1em)}
+  .lista .p-cuerpo{display:block}
+  .lista .p-titulo{display:inline}
+  .lista .p-titulo::after{content:" · ";color:var(--light-sea-green)}
+  .lista .p-texto{display:inline}
+
+  /* ---- Datos clave ---- */
+  .datos{display:flex;gap:56px;margin-top:calc(12px * var(--a));padding-top:calc(28px * var(--a));border-top:2px solid color-mix(in srgb,var(--tea-green) 35%,transparent)}
+  .datos:empty{display:none}
+  .fondo-blanco .datos{border-top-color:var(--line)}
+  .dato{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .dato b{font-family:var(--font-display);font-weight:700;font-size:calc(72px * var(--a));line-height:1;color:var(--tea-green);font-variant-numeric:tabular-nums}
+  .fondo-oxford .dato b{color:var(--light-sea-green)}
+  .fondo-blanco .dato b{color:var(--castleton-green)}
+  .dato span{font-family:var(--font-body);font-size:calc(24px * var(--a));line-height:1.25}
+  .fondo-blanco .dato span{color:var(--ink-muted)}
+
+  .pie{display:flex;align-items:flex-end;justify-content:space-between;margin-top:calc(44px * var(--a))}
+  .isotipo{width:96px;height:96px;flex:none}
+  .isotipo svg{width:100%;height:100%;display:block}
+  .red{font-family:var(--font-body);font-size:24px;line-height:30px;text-align:right;opacity:.9}
+  .red strong{display:block;font-family:var(--font-display);font-weight:700;letter-spacing:.06em}
+</style>
+
+<div class="pieza fondo-{{fondo}}{{#puntos_n}} con-puntos{{/puntos_n}}" data-ajustar>
+  {{#fondo_foto}}{{#imagen}}<img class="trat-{{tratamiento}} foto" src="{{imagen}}" alt=""><div class="velo"></div>{{/imagen}}{{/fondo_foto}}
+
+  {{#etiqueta}}<div class="etiqueta">{{etiqueta}}</div>{{/etiqueta}}
+
+  <div class="cuerpo">
+    <div class="regla"></div>
+    <h1 class="titulo{{#titulo_largo}} largo{{/titulo_largo}}">{{titulo}}</h1>
+    {{#texto}}<p class="texto">{{texto}}</p>{{/texto}}
+    {{#puntos_n}}<div class="puntos {{presentacion}} n-{{puntos_n}}">{{#puntos}}<div class="punto"><span class="p-num">{{@nn}}</span><div class="p-cuerpo"><div class="p-titulo">{{titulo}}</div>{{#texto}}<div class="p-texto">{{texto}}</div>{{/texto}}</div></div>{{/puntos}}</div>{{/puntos_n}}
+    <div class="datos">{{#datos}}<div class="dato"><b>{{valor}}</b><span>{{etiqueta}}</span></div>{{/datos}}</div>
+  </div>
+
+  <div class="pie">
+    <div class="isotipo">{{^fondo_blanco}}{{^fondo_oxford}}{{{logo.isotipo.blanco}}}{{/fondo_oxford}}{{#fondo_oxford}}{{{logo.isotipo.tea}}}{{/fondo_oxford}}{{/fondo_blanco}}{{#fondo_blanco}}{{{logo.isotipo.verde}}}{{/fondo_blanco}}</div>
+    <div class="red"><strong>{{contacto.instagram}}</strong>{{contacto.web}}</div>
+  </div>
+</div>

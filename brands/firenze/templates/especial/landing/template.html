@@ -1,0 +1,106 @@
+<style>
+  body{background:var(--white)}
+  .landing{color:var(--oxford-blue);font-family:var(--font-body)}
+  .contenedor{max-width:1200px;margin:0 auto;padding-inline:max(24px,env(safe-area-inset-left,0px))}
+  a{color:var(--castleton-green)}
+  a:focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px}
+
+  .hero{position:relative;overflow:hidden;background:var(--castleton-green);color:var(--white)}
+  .hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .velo{position:absolute;inset:0;background:var(--castleton-green);opacity:.82}
+  .hero .contenedor{position:relative;padding-block:32px 112px;display:flex;flex-direction:column;gap:96px}
+  nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+  .nombre{width:170px}.nombre svg{display:block;width:100%;height:auto}
+  .nav-link{color:var(--tea-green);font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-bottom:2px solid var(--tea-green);padding-bottom:4px}
+  .hero-texto{display:flex;flex-direction:column;gap:24px;max-width:760px}
+  .etiqueta{font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--tea-green)}
+  h1{margin:0;font-family:var(--font-display);font-weight:500;font-size:clamp(40px,6vw,76px);line-height:1.04;text-wrap:balance}
+  .hero p{margin:0;font-size:20px;line-height:1.55;max-width:620px;white-space:pre-line}
+  .boton{display:inline-flex;align-items:center;align-self:flex-start;min-height:52px;padding:0 28px;font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+  .boton.claro{background:var(--tea-green);color:var(--oxford-blue)}
+  .boton.verde{background:var(--castleton-green);color:var(--white)}
+  .filo{height:8px;background:var(--light-sea-green)}
+
+  .puntos-sec .contenedor{padding-block:96px;display:flex;flex-direction:column;gap:40px}
+  .sec-cab{display:flex;flex-direction:column;gap:12px;max-width:640px}
+  .sec-cab span{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--castleton-green)}
+  h2{margin:0;font-family:var(--font-display);font-weight:500;font-size:40px;line-height:1.12;text-wrap:balance}
+  .tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+  .tarjeta{display:flex;flex-direction:column;gap:10px;padding:28px;background:var(--surface-alt);border-top:4px solid var(--light-sea-green)}
+  .tarjeta span{font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--castleton-green)}
+  .tarjeta h3{margin:0;font-family:var(--font-display);font-weight:700;font-size:20px}
+  .tarjeta p{margin:0;font-size:16px;line-height:1.55;color:var(--ink-muted)}
+
+  .cifras{background:var(--oxford-blue);color:var(--white)}
+  .cifras .contenedor{padding-block:72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px}
+  .cifra{display:flex;flex-direction:column;gap:8px}
+  .cifra b{font-family:var(--font-display);font-weight:700;font-size:56px;line-height:1;color:var(--light-sea-green);font-variant-numeric:tabular-nums}
+  .cifra span{font-size:16px;color:var(--tea-green)}
+
+  .cierre .contenedor{padding-block:96px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:32px}
+  .cierre-texto{display:flex;flex-direction:column;gap:14px;flex:999 1 480px;min-width:0}
+  .cierre h2{color:var(--castleton-green)}
+  .cierre p{margin:0;font-size:18px;line-height:1.55;color:var(--ink-muted);max-width:560px}
+
+  footer{background:var(--castleton-green);color:var(--white)}
+  footer .contenedor{padding-block:28px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;font-size:14px}
+  .isotipo{width:40px;height:40px}.isotipo svg{width:100%;height:100%;display:block}
+  footer .nit{margin-left:auto;color:var(--tea-green)}
+
+  @media (max-width:640px){
+    .hero .contenedor{gap:56px;padding-block:24px 72px}
+    .puntos-sec .contenedor,.cierre .contenedor{padding-block:64px}
+    h2{font-size:30px}
+    footer .nit{margin-left:0}
+  }
+</style>
+
+<div class="landing">
+  <header class="hero">
+    {{#imagen}}<img class="trat-{{tratamiento}}" src="{{imagen}}" alt=""><div class="velo"></div>{{/imagen}}
+    <div class="contenedor">
+      <nav aria-label="Principal">
+        <div class="nombre" role="img" aria-label="FIRENZE">{{{logo.nombre.blanco}}}</div>
+        <a class="nav-link" href="#contacto">Contáctanos</a>
+      </nav>
+      <div class="hero-texto">
+        {{#etiqueta}}<div class="etiqueta">{{etiqueta}}</div>{{/etiqueta}}
+        <h1>{{titulo}}</h1>
+        {{#texto}}<p>{{texto}}</p>{{/texto}}
+        {{#cta}}<a class="boton claro" href="{{#enlace}}{{enlace}}{{/enlace}}{{^enlace}}#contacto{{/enlace}}">{{cta}}</a>{{/cta}}
+      </div>
+    </div>
+  </header>
+  <div class="filo" aria-hidden="true"></div>
+
+  {{#puntos_n}}<section class="puntos-sec">
+    <div class="contenedor">
+      <div class="sec-cab"><span>Qué hacemos</span>{{#seccion}}<h2>{{seccion}}</h2>{{/seccion}}</div>
+      <div class="tarjetas">{{#puntos}}<div class="tarjeta"><span>{{@nn}}</span><h3>{{titulo}}</h3>{{#texto}}<p>{{texto}}</p>{{/texto}}</div>{{/puntos}}</div>
+    </div>
+  </section>{{/puntos_n}}
+
+  {{#datos_n}}<section class="cifras" aria-label="Cifras">
+    <div class="contenedor">{{#datos}}<div class="cifra"><b>{{valor}}</b><span>{{etiqueta}}</span></div>{{/datos}}</div>
+  </section>{{/datos_n}}
+
+  <section class="cierre" id="contacto">
+    <div class="contenedor">
+      <div class="cierre-texto">
+        {{#cierre}}<h2>{{cierre}}</h2>{{/cierre}}
+        {{#cierre_texto}}<p>{{cierre_texto}}</p>{{/cierre_texto}}
+      </div>
+      <a class="boton verde" href="mailto:{{contacto.correo}}">Escribir un correo</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="contenedor">
+      <div class="isotipo" role="img" aria-label="FIRENZE">{{{logo.isotipo.blanco}}}</div>
+      <span>{{contacto.correo}}</span>
+      <span>{{contacto.telefono}}</span>
+      <span>{{contacto.instagram}}</span>
+      <span class="nit">{{contacto.nit}}</span>
+    </div>
+  </footer>
+</div>

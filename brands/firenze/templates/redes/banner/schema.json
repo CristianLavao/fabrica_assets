@@ -1,0 +1,65 @@
+{
+  "campos": [
+    {
+      "id": "fondo",
+      "tipo": "opciones",
+      "label": "Fondo",
+      "opciones": [
+        {
+          "valor": "verde",
+          "label": "Verde"
+        },
+        {
+          "valor": "oxford",
+          "label": "Oxford"
+        }
+      ],
+      "ejemplo": "verde"
+    },
+    {
+      "id": "titulo",
+      "tipo": "texto",
+      "label": "Título",
+      "max": 60,
+      "largo": 44,
+      "requerido": true,
+      "ejemplo": "Proyectos que inspiran, sueños que perduran"
+    },
+    {
+      "id": "texto",
+      "tipo": "texto",
+      "label": "Línea de apoyo",
+      "max": 80,
+      "ejemplo": "Gestión integral de proyectos de ingeniería · www.firenze.com"
+    },
+    {
+      "id": "imagen",
+      "tipo": "imagen",
+      "label": "Imagen",
+      "ayuda": "Ocupa el bloque derecho (568×500). Sin imagen queda el patrón de la marca.",
+      "ejemplo": "ds/project/assets/Fotografia/edificios-oficinas.jpg"
+    },
+    {
+      "id": "tratamiento",
+      "tipo": "opciones",
+      "label": "Color de la foto",
+      "visibleSi": "imagen",
+      "ayuda": "Duotono con los colores de marca: unifica fotos de distintas fuentes.",
+      "opciones": [
+        {
+          "valor": "verde",
+          "label": "Verde"
+        },
+        {
+          "valor": "azul",
+          "label": "Azul"
+        },
+        {
+          "valor": "original",
+          "label": "Original"
+        }
+      ],
+      "ejemplo": "verde"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Banco de fotos de la marca (obra, planos y arquitectura), reducido a 1800px de ancho para producir piezas. Los originales en alta resolución están en la carpeta de entregables del cliente. Encuadre a sangre, sin redondeo y con velo de color de marca cuando la foto lleva texto encima.

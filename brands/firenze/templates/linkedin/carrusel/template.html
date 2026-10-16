@@ -1,0 +1,76 @@
+<style>
+  /* Documento de LinkedIn: páginas de 1080×1350 (4:5), una tras otra; el PDF corta en cada página */
+  .pagina{position:relative;width:1080px;height:1350px;overflow:hidden;display:flex;flex-direction:column;break-after:page;font-family:var(--font-body)}
+  .pagina:last-child{break-after:auto}
+
+  /* Portada */
+  .portada{background:var(--castleton-green);color:var(--white)}
+  .portada .foto{position:relative;height:620px;flex:none;background:var(--oxford-blue)}
+  .portada .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .portada .filo{height:14px;flex:none;background:var(--light-sea-green)}
+  .portada .cuerpo{flex:1;padding:72px 80px 72px;display:flex;flex-direction:column;gap:28px}
+  .nombre{width:200px}.nombre svg{display:block;width:100%;height:auto}
+  .etiqueta{font-family:var(--font-display);font-weight:700;font-size:24px;letter-spacing:.16em;text-transform:uppercase;color:var(--tea-green)}
+  .portada h1{margin:0;font-family:var(--font-display);font-weight:500;font-size:84px;line-height:1.04;text-wrap:balance}
+  .portada h1.largo{font-size:70px}
+  .portada p{margin:0;font-size:32px;line-height:1.4;color:var(--tea-green)}
+  .desliza{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+  .desliza span{font-family:var(--font-display);font-weight:700;font-size:24px;letter-spacing:.12em;text-transform:uppercase;color:var(--tea-green)}
+  .flecha{display:flex;align-items:center;gap:0}
+  .flecha i{display:block;width:96px;height:4px;background:var(--tea-green)}
+  .flecha b{display:block;width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:20px solid var(--tea-green)}
+
+  /* Diapositivas */
+  .diapo{background:var(--white);color:var(--oxford-blue);padding:88px 80px 72px}
+  .diapo .num{font-family:var(--font-display);font-weight:700;font-size:140px;line-height:1;color:var(--light-sea-green)}
+  .diapo .regla{width:96px;height:6px;background:var(--castleton-green);margin:40px 0 36px}
+  .diapo h2{margin:0;font-family:var(--font-display);font-weight:500;font-size:72px;line-height:1.08;color:var(--castleton-green);text-wrap:balance;max-width:900px}
+  .diapo .txt{margin:32px 0 0;font-size:36px;line-height:1.45;color:var(--ink-muted);max-width:880px}
+  .cifra{margin-top:48px;padding:36px 40px;background:var(--surface-alt);display:flex;flex-direction:column;gap:8px}
+  .cifra b{font-family:var(--font-display);font-weight:700;font-size:112px;line-height:1;color:var(--castleton-green)}
+  .cifra span{font-size:28px;color:var(--ink-muted)}
+  .pie-diapo{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:28px;border-top:2px solid var(--line);font-size:24px;color:var(--ink-muted)}
+  .pie-diapo strong{font-family:var(--font-display);font-weight:700;letter-spacing:.06em;color:var(--castleton-green)}
+
+  /* Cierre */
+  .cierre{background:var(--oxford-blue);color:var(--white);padding:88px 80px 80px}
+  .cierre .isotipo{width:140px;height:140px}.cierre .isotipo svg{width:100%;height:100%;display:block}
+  .cierre h2{margin:auto 0 0;font-family:var(--font-display);font-weight:500;font-size:84px;line-height:1.06;text-wrap:balance}
+  .cierre p{margin:28px 0 0;font-size:34px;line-height:1.45;color:var(--tea-green);max-width:860px}
+  .contacto{margin-top:64px;padding-top:36px;border-top:2px solid color-mix(in srgb,var(--light-sea-green) 45%,transparent);display:flex;flex-direction:column;gap:14px;font-size:30px}
+  .contacto strong{font-family:var(--font-display);font-weight:700;letter-spacing:.06em;color:var(--light-sea-green)}
+</style>
+
+<section class="pagina portada">
+  <div class="foto">{{#imagen}}<img class="trat-{{tratamiento}}" src="{{imagen}}" alt="">{{/imagen}}</div>
+  <div class="filo" aria-hidden="true"></div>
+  <div class="cuerpo">
+    {{#etiqueta}}<div class="etiqueta">{{etiqueta}}</div>{{/etiqueta}}
+    <h1 class="{{#titulo_largo}}largo{{/titulo_largo}}">{{titulo}}</h1>
+    {{#texto}}<p>{{texto}}</p>{{/texto}}
+    <div class="desliza">
+      <div class="nombre">{{{logo.nombre.blanco}}}</div>
+      <div class="flecha" aria-label="Desliza"><span>Desliza</span>&nbsp;&nbsp;<i></i><b></b></div>
+    </div>
+  </div>
+</section>
+
+{{#diapositivas}}<section class="pagina diapo">
+  <div class="num">{{@nn}}</div>
+  <div class="regla" aria-hidden="true"></div>
+  <h2>{{titulo}}</h2>
+  {{#texto}}<p class="txt">{{texto}}</p>{{/texto}}
+  {{#cifra}}<div class="cifra"><b>{{cifra}}</b>{{#cifra_texto}}<span>{{cifra_texto}}</span>{{/cifra_texto}}</div>{{/cifra}}
+  <div class="pie-diapo"><strong>{{contacto.instagram}}</strong><span>{{@n}} / {{diapositivas_n}}</span></div>
+</section>{{/diapositivas}}
+
+<section class="pagina cierre">
+  <div class="isotipo" role="img" aria-label="FIRENZE">{{{logo.isotipo.tea}}}</div>
+  {{#cierre}}<h2>{{cierre}}</h2>{{/cierre}}
+  {{#cierre_texto}}<p>{{cierre_texto}}</p>{{/cierre_texto}}
+  <div class="contacto">
+    <strong>{{contacto.web}}</strong>
+    <span>{{contacto.correo}}</span>
+    <span>{{contacto.telefono}}</span>
+  </div>
+</section>

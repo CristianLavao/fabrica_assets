@@ -1,0 +1,45 @@
+{
+  "campos": [
+    { "id": "titulo", "tipo": "texto", "label": "Título de la propuesta", "max": 80, "largo": 48, "requerido": true, "ejemplo": "Interventoría técnica, administrativa y financiera del proyecto Torre Altavista" },
+    { "id": "cliente", "tipo": "texto", "label": "Cliente", "max": 60, "ejemplo": "[Empresa cliente]" },
+    { "id": "numero", "tipo": "texto", "label": "Número o código", "max": 24, "ejemplo": "PC-2026-014" },
+    { "id": "fecha", "tipo": "texto", "label": "Fecha", "max": 30, "ejemplo": "15 de octubre de 2026" },
+    { "id": "vigencia", "tipo": "texto", "label": "Vigencia de la oferta", "max": 40, "ejemplo": "30 días calendario" },
+    { "id": "imagen", "tipo": "imagen", "label": "Imagen de portada", "ejemplo": "ds/project/assets/Fotografia/planos-arquitecto.jpg" },
+    { "id": "tratamiento", "tipo": "opciones", "label": "Color de la foto", "visibleSi": "imagen",
+      "opciones": [ { "valor": "verde", "label": "Verde" }, { "valor": "azul", "label": "Azul" }, { "valor": "original", "label": "Original" } ],
+      "ejemplo": "verde" },
+    { "id": "contexto", "tipo": "parrafo", "label": "Contexto y objetivo", "max": 3000, "parrafos": true,
+      "ayuda": "Separa los párrafos con una línea en blanco.",
+      "ejemplo": "[Empresa cliente] adelanta la construcción de la Torre Altavista, un edificio de uso mixto de 12 pisos. Nos solicitó una propuesta de interventoría que asegure el cumplimiento de los diseños, la calidad de la obra y el control del presupuesto.\n\nEl objetivo es acompañar el proyecto desde el inicio de la cimentación hasta la entrega, con información semanal para tomar decisiones a tiempo." },
+    { "id": "alcance", "tipo": "lista", "label": "Alcance", "item": "actividad", "max": 10,
+      "subcampos": [ { "id": "titulo", "label": "Actividad", "max": 60 }, { "id": "texto", "label": "Descripción", "tipo": "parrafo", "max": 240 } ],
+      "ejemplo": [
+        { "titulo": "Revisión técnica de diseños", "texto": "Verificación de planos estructurales, arquitectónicos y de redes antes de cada frente de obra." },
+        { "titulo": "Control de calidad", "texto": "Ensayos de materiales, inspecciones programadas y registro fotográfico de cada actividad." },
+        { "titulo": "Seguimiento financiero", "texto": "Revisión de cantidades y precios antes de cada pago al contratista." },
+        { "titulo": "Control de cronograma", "texto": "Informe semanal de avance físico con alertas tempranas y planes de recuperación." },
+        { "titulo": "Seguridad y salud en el trabajo", "texto": "Verificación del cumplimiento de protocolos y normativa vigente en obra." }
+      ] },
+    { "id": "cronograma", "tipo": "lista", "label": "Cronograma", "item": "fase", "max": 10,
+      "subcampos": [ { "id": "fase", "label": "Fase", "max": 40 }, { "id": "duracion", "label": "Duración", "max": 20 }, { "id": "entregable", "label": "Entregable", "max": 80 } ],
+      "ejemplo": [
+        { "fase": "Arranque", "duracion": "2 semanas", "entregable": "Plan de interventoría y línea base" },
+        { "fase": "Cimentación y estructura", "duracion": "[00] semanas", "entregable": "Informes semanales y actas de avance" },
+        { "fase": "Acabados", "duracion": "[00] semanas", "entregable": "Informes semanales y pruebas de redes" },
+        { "fase": "Entrega y cierre", "duracion": "3 semanas", "entregable": "Acta de entrega, manuales y garantías" }
+      ] },
+    { "id": "inversion", "tipo": "lista", "label": "Inversión", "item": "concepto", "max": 10, "compacto": true,
+      "subcampos": [ { "id": "concepto", "label": "Concepto", "max": 60 }, { "id": "valor", "label": "Valor", "max": 24 } ],
+      "ejemplo": [
+        { "concepto": "Interventoría técnica (mensual)", "valor": "$ [0.000.000]" },
+        { "concepto": "Interventoría administrativa y financiera (mensual)", "valor": "$ [0.000.000]" },
+        { "concepto": "Ensayos de laboratorio (global)", "valor": "$ [0.000.000]" }
+      ] },
+    { "id": "total", "tipo": "texto", "label": "Total", "max": 30, "ejemplo": "$ [00.000.000] + IVA" },
+    { "id": "condiciones", "tipo": "parrafo", "label": "Condiciones", "max": 2000, "parrafos": true,
+      "ejemplo": "Forma de pago: mensual, a 30 días de radicada la factura.\n\nLos valores no incluyen IVA. La propuesta se ajusta si cambia el alcance o la duración de la obra." },
+    { "id": "firma_nombre", "tipo": "texto", "label": "Quien presenta", "max": 60, "ejemplo": "[Nombre y apellido]" },
+    { "id": "firma_cargo", "tipo": "texto", "label": "Cargo", "max": 60, "ejemplo": "[Gerente general]" }
+  ]
+}

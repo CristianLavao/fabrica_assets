@@ -1,0 +1,51 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>FIRENZE</title>
+<style>
+  html,body{margin:0;background:var(--surface)}
+  .cover{position:relative;width:960px;height:288px;overflow:hidden;background:var(--surface)}
+  .cover svg{position:absolute;inset:0}
+  .castleton{fill:var(--castleton-green)}
+  .deep{fill:var(--brand-deep)}
+  .tea{fill:var(--tea-green)}
+  .sea{fill:var(--light-sea-green)}
+  .lapis{fill:var(--lapis-lazuli)}
+  .name{position:absolute;left:40px;bottom:76px;margin:0;line-height:0}
+  .name img{display:block;width:420px;height:auto}
+  .name .oscuro{display:none}
+  [data-theme="dark"] .name .claro{display:none}
+  [data-theme="dark"] .name .oscuro{display:block}
+  .tag{position:absolute;left:40px;bottom:40px;margin:0;font-family:var(--font-body);font-size:14px;line-height:20px;color:var(--ink-muted);max-width:440px}
+</style></head>
+<body>
+<div class="cover">
+  <svg width="960" height="288" viewBox="0 0 960 288" aria-hidden="true">
+    <!--
+      blocks: castleton-green 272x288 slab (identity), brand-deep 208x160, tea-green 128x128, lapis-lazuli 80x128, light-sea-green 96x64 (space-5 multiples)
+      arrangement: one tall slab with satellites, flush modular grid bleeding off top and right edges
+      pattern: literal motif, the isotipo's striated ground (horizontal bands) and columns, because the mark is a seal of terrain lines over columns
+      steps and radii: bands 8px with space-2 gaps, columns 8px at space-3 pitch, radius-none everywhere (square brand)
+    -->
+    <rect class="castleton" x="480" y="0" width="272" height="288"/>
+    <rect class="deep" x="752" y="0" width="208" height="160"/>
+    <rect class="tea" x="752" y="160" width="128" height="128"/>
+    <rect class="lapis" x="880" y="160" width="80" height="128"/>
+    <rect class="sea" x="480" y="224" width="96" height="64"/>
+    <!-- bandas del sello sobre el bloque verde -->
+    <rect class="tea" x="520" y="96" width="192" height="8"/>
+    <rect class="tea" x="520" y="112" width="192" height="8"/>
+    <rect class="tea" x="520" y="128" width="192" height="8"/>
+    <rect class="tea" x="520" y="144" width="192" height="8"/>
+    <!-- columnas del sello sobre el bloque profundo -->
+    <rect class="sea" x="792" y="40" width="8" height="88"/>
+    <rect class="sea" x="816" y="40" width="8" height="88"/>
+    <rect class="sea" x="840" y="40" width="8" height="88"/>
+    <rect class="sea" x="864" y="40" width="8" height="88"/>
+    <rect class="sea" x="888" y="40" width="8" height="88"/>
+  </svg>
+  <h1 class="name"><img class="claro" alt="FIRENZE" src="/_blob/84ee578ea9df2451eff99891157f8270"><img class="oscuro" alt="" src="/_blob/955be8f252aba9b4e9338dd04bfa0087"></h1>
+  <p class="tag">Proyectos que inspiran, sueños que perduran.</p>
+</div>
+</body>
+</html>

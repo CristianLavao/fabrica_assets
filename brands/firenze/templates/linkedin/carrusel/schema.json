@@ -1,0 +1,29 @@
+{
+  "campos": [
+    { "id": "etiqueta", "tipo": "texto", "label": "Etiqueta de portada", "max": 28, "ejemplo": "Guía rápida" },
+    { "id": "titulo", "tipo": "texto", "label": "Título de portada", "max": 70, "largo": 40, "requerido": true, "ejemplo": "5 decisiones que evitan sobrecostos en obra" },
+    { "id": "texto", "tipo": "parrafo", "label": "Subtítulo", "max": 120, "ejemplo": "Lo que revisamos antes de poner el primer bloque." },
+    { "id": "imagen", "tipo": "imagen", "label": "Imagen de portada", "ejemplo": "ds/project/assets/Fotografia/ingeniero-con-planos.jpg" },
+    { "id": "tratamiento", "tipo": "opciones", "label": "Color de la foto", "visibleSi": "imagen",
+      "ayuda": "Duotono con los colores de marca: unifica fotos de distintas fuentes.",
+      "opciones": [ { "valor": "verde", "label": "Verde" }, { "valor": "azul", "label": "Azul" }, { "valor": "original", "label": "Original" } ],
+      "ejemplo": "verde" },
+    { "id": "diapositivas", "tipo": "lista", "label": "Diapositivas", "item": "diapositiva", "max": 8,
+      "ayuda": "Una idea por diapositiva. La cifra es opcional y se muestra en grande.",
+      "subcampos": [
+        { "id": "titulo", "label": "Título", "max": 50 },
+        { "id": "texto", "label": "Texto", "tipo": "parrafo", "max": 160 },
+        { "id": "cifra", "label": "Cifra (opcional)", "max": 10 },
+        { "id": "cifra_texto", "label": "Qué mide la cifra", "max": 40 }
+      ],
+      "ejemplo": [
+        { "titulo": "Revisar diseños antes de licitar", "texto": "Cada inconsistencia entre planos que se corrige en papel es una orden de cambio menos en obra.", "cifra": "", "cifra_texto": "" },
+        { "titulo": "Presupuesto por frentes de obra", "texto": "Separar cimentación, estructura y acabados permite ver a tiempo dónde se desvía el gasto.", "cifra": "", "cifra_texto": "" },
+        { "titulo": "Control semanal, no mensual", "texto": "Una desviación detectada en la semana 2 cuesta mucho menos que en el cierre del mes.", "cifra": "[00]", "cifra_texto": "[% de desviación evitada]" },
+        { "titulo": "Compras con anticipación", "texto": "Asegurar materiales críticos con margen protege el cronograma frente a escasez y alzas.", "cifra": "", "cifra_texto": "" },
+        { "titulo": "Interventoría independiente", "texto": "Una mirada externa valida calidad y cantidades antes de cada pago.", "cifra": "", "cifra_texto": "" }
+      ] },
+    { "id": "cierre", "tipo": "texto", "label": "Título de cierre", "max": 50, "ejemplo": "¿Tu proyecto va a tiempo?" },
+    { "id": "cierre_texto", "tipo": "parrafo", "label": "Texto de cierre", "max": 120, "ejemplo": "Escríbenos y revisamos contigo el plan de obra." }
+  ]
+}
