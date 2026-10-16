@@ -18,7 +18,14 @@ export default function middleware(request) {
   const usuario = process.env.FABRICA_USUARIO;
   const clave = process.env.FABRICA_CLAVE;
   if (!usuario || !clave) {
-    return new Response('La fábrica no tiene credenciales configuradas (FABRICA_USUARIO y FABRICA_CLAVE).', { status: 503 });
+    // Dice qué variable falta (nunca su valor) para poder corregirlo en Vercel
+    const faltan = [!usuario && 'FABRICA_USUARIO', !clave && 'FABRICA_CLAVE'].filter(Boolean).join(' y ');
+    const entorno = process.env.VERCEL_ENV || 'desconocido';
+    return new Response(
+      `La fábrica no tiene credenciales configuradas. Falta: ${faltan} (entorno: ${entorno}).\n` +
+        'Revisa en Vercel › Settings › Environment Variables que exista con ese nombre exacto y marcada para este entorno, y vuelve a desplegar.',
+      { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } },
+    );
   }
   const cabecera = request.headers.get('authorization') || '';
   if (cabecera.startsWith('Basic ')) {
