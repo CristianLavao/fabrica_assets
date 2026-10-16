@@ -1,6 +1,7 @@
 // Formulario generado desde el schema.json del template.
 
 import CampoLista from './CampoLista.jsx';
+import { leerImagenReducida } from '../lib/imagenes.js';
 
 function Contador({ valor, max }) {
   if (!max) return null;
@@ -11,9 +12,7 @@ function Contador({ valor, max }) {
 function CampoImagen({ campo, valor, onChange }) {
   const elegir = (archivo) => {
     if (!archivo) return;
-    const lector = new FileReader();
-    lector.onload = () => onChange(lector.result);
-    lector.readAsDataURL(archivo);
+    leerImagenReducida(archivo).then(onChange).catch(() => {});
   };
   const esSubida = typeof valor === 'string' && valor.startsWith('data:');
   return (

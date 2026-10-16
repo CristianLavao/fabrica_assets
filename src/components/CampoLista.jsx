@@ -1,6 +1,8 @@
 // Campo repetible: el usuario agrega (+), quita y reordena elementos.
 // Cada elemento tiene los subcampos que define el schema. Con `compacto` se muestra en una sola fila.
 
+import { leerImagenReducida } from '../lib/imagenes.js';
+
 function vacio(campo) {
   return Object.fromEntries(campo.subcampos.map((s) => [s.id, '']));
 }
@@ -62,9 +64,7 @@ export default function CampoLista({ campo, valor, onChange }) {
               if (s.tipo === 'imagen') {
                 const leer = (archivo) => {
                   if (!archivo) return;
-                  const lector = new FileReader();
-                  lector.onload = () => editar(i, s.id, lector.result);
-                  lector.readAsDataURL(archivo);
+                  leerImagenReducida(archivo).then((v) => editar(i, s.id, v)).catch(() => {});
                 };
                 return (
                   <div key={s.id} className="lista-imagen">

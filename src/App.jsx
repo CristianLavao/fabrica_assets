@@ -164,7 +164,12 @@ export default function App() {
         {template && bloqueo && <p className="aviso">{bloqueo}</p>}
         {template && exportacion?.tipo === 'ok' && (
           <p className="aviso ok" role="status">
-            Descargado. Copia guardada en <code>{exportacion.guardadoEn}</code> ({(exportacion.peso / 1024).toFixed(0)} KB).
+            Descargado ({(exportacion.peso / 1024).toFixed(0)} KB).
+            {exportacion.guardadoEn && (
+              <>
+                {' '}Copia guardada en <code>{exportacion.guardadoEn}</code>.
+              </>
+            )}
           </p>
         )}
         {template && exportacion?.tipo === 'error' && (
